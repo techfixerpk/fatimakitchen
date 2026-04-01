@@ -1,622 +1,635 @@
-/* FATIMA'S KITCHEN - MOBILE FIRST CORE ENGINE
-   LOCATION: LAHORE, PAKISTAN
-   VERSION: 2.0 (High Density)
+/* FATIMA'S KITCHEN - INDUSTRIAL CORE V1
+   PROTOCOL: AMANATDARI-600 (ZERO-EXTERNAL)
+   DESIGN: CYBERPUNK GLASSMORPHISM / LAHORE-GOLD
 */
 
 :root {
-    --p: #ffcc00;        /* Saffron Gold */
-    --s: #8b0000;        /* Deep Maroon */
-    --t: #3d2b1f;        /* Roasted Brown */
-    --w: #ffffff;
-    --b: #000000;
-    --g: #f9f9f9;        /* Off-white background */
-    --glass: rgba(255, 255, 255, 0.95);
-    --shadow: 0 10px 30px rgba(0,0,0,0.1);
-    --a: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Color Palette */
+    --p: #FFB700; /* Royal Gold (Lahore Theme) */
+    --s: #8B0000; /* Deep Maroon (Legacy) */
+    --t: #1A1A1A; /* Cyber Dark */
+    --w: #FFFFFF;
+    --g: #F4F4F4;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
+    /* System Constraints */
+    --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --anim: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-}
-
-body {
-    background: var(--g);
-    color: var(--t);
-    line-height: 1.6;
-    overflow-x: hidden; /* Mobile overflow fix */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* MOBILE-FIRST NAV BAR (STICKY & COMPACT) */
+body {
+    background: var(--t);
+    color: var(--w);
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* 1. UNIVERSAL NAVIGATION (Dhamakedar Glassmorphism) */
 .nav {
-    width: 100%;
-    height: 70px;
-    background: var(--w);
     position: fixed;
     top: 0;
-    left: 0;
+    width: 100%;
+    height: 75px;
+    background: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
-    z-index: 9999;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    padding: 0 6%;
+    z-index: 10000;
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .logo-link {
     display: flex;
     align-items: center;
     text-decoration: none;
-    gap: 10px;
+    gap: 12px;
 }
 
 .logo-img {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
     object-fit: cover;
-    border-radius: 8px;
     border: 2px solid var(--p);
+    box-shadow: 0 0 15px rgba(255, 183, 0, 0.3);
 }
 
 .logo-name {
-    font-size: 1.1rem;
+    color: var(--p);
     font-weight: 900;
-    color: var(--s);
-    text-transform: uppercase;
+    font-size: 1.3rem;
     letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/* HAMBURGER MENU - Mobile focus */
-.menu-toggle {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    cursor: pointer;
-    background: var(--s);
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.menu-toggle span {
-    width: 100%;
-    height: 3px;
-    background: var(--p);
-    border-radius: 2px;
-    transition: var(--a);
-}
-
-/* NAVIGATION LINKS PANEL (Hidden on mobile by default) */
 .nav-links {
-    position: fixed;
-    top: 70px;
-    left: -100%;
-    width: 80%;
-    height: calc(100vh - 70px);
-    background: var(--w);
     display: flex;
-    flex-direction: column;
-    padding: 40px 10%;
-    gap: 25px;
-    transition: 0.4s ease-in-out;
-    box-shadow: 10px 0 30px rgba(0,0,0,0.1);
     list-style: none;
-}
-
-.nav-links.active {
-    left: 0;
+    gap: 30px;
 }
 
 .nav-links a {
+    color: var(--w);
     text-decoration: none;
-    color: var(--t);
-    font-weight: 800;
-    font-size: 1.2rem;
+    font-weight: 700;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    border-bottom: 2px solid transparent;
-    display: inline-block;
+    transition: var(--anim);
+    position: relative;
 }
 
 .nav-links a:hover {
-    color: var(--s);
-    border-color: var(--p);
+    color: var(--p);
 }
 
-/* SECTION PADDING FOR MOBILE */
-.section {
-    padding: 60px 6%;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--p);
+    transition: var(--anim);
 }
 
-/* RESPONSIVE HEADERS */
-h1 { font-size: 2.2rem; line-height: 1.2; color: var(--s); }
-h2 { font-size: 1.8rem; margin-bottom: 20px; }
-p { font-size: 1rem; color: #555; }
-/* HERO ENGINE - MOBILE FIRST (Optimized for 4GB RAM Devices) */
-.hero {
-    margin-top: 70px;
+.nav-links a:hover::after {
     width: 100%;
-    min-height: 85vh;
-    background: var(--t);
-    position: relative;
-    display: flex;
-    flex-direction: column;
+}
+
+/* 2. BUTTONS SYSTEM (Working & High-Feedback) */
+.btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 40px 6%;
-    overflow: hidden;
-}
-
-/* Background Image Handler (Using your pics) */
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.3;
-    z-index: 1;
-    filter: grayscale(30%) contrast(110%);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 5;
-    width: 100%;
-    max-width: 600px;
-}
-
-.hero-tag {
-    color: var(--p);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.hero-title {
-    color: var(--w);
-    font-size: clamp(2rem, 10vw, 3.5rem);
-    line-height: 1.1;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.hero-title span {
-    color: var(--p);
-}
-
-.hero-desc {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
-    margin-bottom: 35px;
-    line-height: 1.5;
-}
-
-/* BUTTON SYSTEM - NO OVERFLOW */
-.btn-group {
-    display: flex;
-    flex-direction: column; /* Mobile focus */
-    gap: 15px;
-    width: 100%;
-}
-
-.btn {
-    padding: 16px 30px;
-    border-radius: 12px;
+    padding: 14px 28px;
+    border-radius: 50px;
     font-weight: 800;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 0.9rem;
     letter-spacing: 1px;
-    transition: var(--a);
-    display: inline-block;
+    transition: var(--anim);
+    cursor: pointer;
     border: none;
-    text-align: center;
-}
-
-.btn-p {
-    background: var(--p);
-    color: var(--s);
-    box-shadow: 0 8px 20px rgba(255, 204, 0, 0.2);
-}
-
-.btn-s {
-    background: transparent;
-    border: 2px solid var(--w);
-    color: var(--w);
+    font-size: 0.85rem;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn:active {
     transform: scale(0.95);
 }
 
-/* TABLET & DESKTOP ADJUSTMENTS (Media Queries) */
-@media (min-width: 768px) {
-    .btn-group {
-        flex-direction: row;
-        justify-content: center;
-    }
-    
-    .nav-links {
-        position: static;
-        flex-direction: row;
-        width: auto;
-        height: auto;
-        box-shadow: none;
-        padding: 0;
-        left: 0;
-    }
-    
-    .menu-toggle {
-        display: none;
-    }
-    
-    .section {
-        padding: 100px 10%;
-    }
+.btn-p {
+    background: var(--p);
+    color: var(--s);
+    box-shadow: 0 5px 20px rgba(255, 183, 0, 0.4);
 }
 
-/* IMAGE FRAME - Dynamic Border */
+.btn-p:hover {
+    background: var(--w);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.btn-s {
+    background: var(--s);
+    color: var(--w);
+    box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
+}
+/* 3. MOBILE HAMBURGER & OVERLAY ENGINE */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: var(--p);
+    border-radius: 10px;
+    transition: var(--anim);
+}
+
+/* Active State for Hamburger */
+.menu-toggle.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+@media (max-width: 992px) {
+    .menu-toggle { display: flex; }
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(139, 0, 0, 0.98); /* Deep Maroon Glass */
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s cubic-bezier(0.8, 0, 0.2, 1);
+        gap: 40px;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    }
+    .nav-links.active { right: 0; }
+    .nav-links a { font-size: 1.5rem; color: var(--p); }
+}
+
+/* 4. CYBER-GLASS CARDS & IMAGE CONTAINERS (For Image 1-15) */
+.card-box {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 20px;
+    transition: var(--anim);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-box:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--p);
+    box-shadow: 0 15px 40px rgba(255, 183, 0, 0.15);
+}
+
 .img-frame {
     width: 100%;
-    border-radius: 20px;
+    height: 250px;
+    border-radius: 18px;
     overflow: hidden;
-    border: 5px solid var(--w);
-    box-shadow: var(--shadow);
-    background: var(--t);
-    position: relative;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .img-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    transition: 0.8s ease;
+}
+
+.card-box:hover .img-frame img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* 5. DHAMAKEDAR ANIMATIONS & SOUND FEEDBACK CLASSES */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake-hover:hover {
+    animation: shake 0.3s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px var(--p); }
+    50% { box-shadow: 0 0 20px var(--p); }
+    100% { box-shadow: 0 0 5px var(--p); }
+}
+
+.glow-btn {
+    animation: glow 2s infinite;
+}
+
+/* 6. TYPOGRAPHY & TEXT (Maxed Out) */
+h1, h2, h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+.gold-text {
+    background: linear-gradient(45deg, #FFB700, #FFF5A5, #FFB700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
    }
-   /* GRID SYSTEM - ANTI-OVERFLOW ENGINE */
-.container {
+           /* 7. DHAMAKEDAR MENU GRID (4 Categories Layout) */
+.menu-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+/* Category Header Styling */
+.category-title {
+    grid-column: 1 / -1;
     display: flex;
-    flex-wrap: wrap; /* Mobile par boxes niche aa jayein ge */
-    gap: 20px;
-    width: 100%;
-}
-
-.card-box {
-    flex: 1 1 100%; /* Default mobile: full width */
-    background: var(--w);
-    padding: 30px 20px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    border: 1px solid rgba(0,0,0,0.05);
-    transition: var(--a);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-/* LAHORE LOCATION & TRUST BADGE */
-.location-tag {
-    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(139, 0, 0, 0.1);
-    color: var(--s);
+    gap: 15px;
+    margin: 40px 0 20px;
+}
+
+.category-title::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--p), transparent);
+}
+
+/* 8. INTERACTIVE PRICE TAGS (Lahore Market Ready) */
+.price-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--s);
+    color: var(--p);
     padding: 8px 15px;
     border-radius: 50px;
+    font-weight: 900;
+    font-size: 0.9rem;
+    border: 1px solid var(--p);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.item-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* 9. NEON SOCIAL STRIP (Maxed Out All Links) */
+.social-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--w);
+    font-weight: 900;
     font-size: 0.8rem;
-    font-weight: 800;
-    margin-bottom: 20px;
+    transition: var(--anim);
 }
 
-/* IMAGE HANDLER FOR MENU & LOGO */
-.img-wrap {
-    width: 100%;
-    height: 200px;
-    background: var(--g);
-    border-radius: 15px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    position: relative;
+.social-btn:hover {
+    transform: translateY(-5px) rotate(8deg);
+    border-color: var(--p);
+    box-shadow: 0 0 20px var(--p);
+    color: var(--p);
 }
 
-.img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Image kharab nahi hogi */
-    transition: transform 0.5s ease;
+/* 10. SYSTEM UTILITIES (Working Logic) */
+.section-padding {
+    padding: 80px 6%;
 }
 
-.card-box:hover .img-wrap img {
-    transform: scale(1.1);
+.max-width {
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-/* SECTION TITLES - CENTERED FOR MOBILE */
-.sec-title-wrap {
-    text-align: center;
-    margin-bottom: 40px;
-    width: 100%;
-}
-
-.sec-title-wrap h2 {
-    font-size: 1.8rem;
-    color: var(--s);
+/* Floating Status Bar Logic */
+.system-status {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    border-left: 4px solid var(--p);
+    z-index: 9999;
+    letter-spacing: 1px;
+    color: var(--p);
     text-transform: uppercase;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
 }
 
-.sec-title-wrap h2::after {
+/* Mobile Adjustments for Part 3 */
+@media (max-width: 480px) {
+    .menu-section {
+        grid-template-columns: 1fr;
+    }
+    .social-grid {
+        gap: 8px;
+    }
+    .social-btn {
+        width: 40px;
+        height: 40px;
+    }
+   }
+/* 11. DHAMAKEDAR FOOTER (Logo, Details, & Cyber-Socials) */
+.footer {
+    background: linear-gradient(180deg, transparent, var(--s));
+    padding: 80px 6% 30px;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 100px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-brand img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px var(--p));
+}
+
+.footer-links h4 {
+    color: var(--p);
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.footer-links h4::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 25%;
-    width: 50%;
+    bottom: -8px;
+    left: 0;
+    width: 30px;
     height: 3px;
     background: var(--p);
 }
 
-/* TABLET & DESKTOP GRID ADJUSTMENTS */
-@media (min-width: 600px) {
-    .card-box {
-        flex: 1 1 calc(50% - 20px); /* 2 cards per row */
-    }
+.footer-links ul {
+    list-style: none;
 }
 
-@media (min-width: 1024px) {
-    .card-box {
-        flex: 1 1 calc(33.33% - 20px); /* 3 cards per row */
-    }
+.footer-links ul li {
+    margin-bottom: 12px;
 }
 
-/* AMANATDARI PILL - STYLED */
-.pill {
-    background: var(--s);
-    color: var(--p);
-    padding: 5px 12px;
-    font-size: 10px;
-    font-weight: 900;
-    border-radius: 4px;
-    text-transform: uppercase;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 10;
-   }
-/* CONTACT & FOOTER ENGINE - MOBILE OPTIMIZED */
-.footer {
-    background: var(--t);
-    padding: 60px 6% 30px;
-    color: var(--w);
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    border-top: 5px solid var(--p);
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column; /* Mobile Default */
-    gap: 40px;
-    width: 100%;
-}
-
-.footer-brand h2 {
-    color: var(--p);
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-.footer-info {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.8);
-    word-break: break-all; /* Email box se bahar nahi jaye gi */
-}
-
-.info-item b {
-    color: var(--p);
-    min-width: 70px;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-}
-
-/* SOCIAL LINKS - NO WRAP ISSUE */
-.social-wrap {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
-
-.social-link {
-    width: 40px;
-    height: 40px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.footer-links ul li a {
+    color: rgba(255,255,255,0.7);
     text-decoration: none;
+    transition: var(--anim);
+    font-size: 0.9rem;
+}
+
+.footer-links ul li a:hover {
     color: var(--p);
+    padding-left: 10px;
+}
+
+/* 12. CYBER-GLASS CONTACT FORM (Contact Page Ready) */
+.contact-container {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--p);
+    font-size: 0.75rem;
     font-weight: 900;
-    font-size: 14px;
-    transition: var(--a);
-    border: 1px solid transparent;
-}
-
-.social-link:hover {
-    background: var(--s);
-    border-color: var(--p);
-    transform: translateY(-5px);
-}
-
-/* COPYRIGHT BAR */
-.copy-bar {
-    text-align: center;
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    font-size: 11px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
     letter-spacing: 1px;
-    opacity: 0.5;
+}
+
+.form-input {
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 15px;
+    color: var(--w);
+    font-size: 1rem;
+    transition: var(--anim);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--p);
+    box-shadow: 0 0 15px rgba(255, 183, 0, 0.2);
+    background: rgba(255,255,255,0.05);
+}
+
+/* 13. GLITCH & HOVER OVERLOAD EFFECTS */
+.glitch-text:hover {
+    text-shadow: 0.05em 0 0 rgba(255,0,0,0.75),
+                -0.025em -0.05em 0 rgba(0,255,0,0.75),
+                0.025em 0.05em 0 rgba(0,0,255,0.75);
+    animation: glitch 500ms infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* Scroll-to-Top Button Styling */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    background: var(--p);
+    color: var(--s);
+    border: none;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 9999;
+    display: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: var(--anim);
+}
+
+#scrollTopBtn:hover {
+    transform: translateY(-5px);
+    background: var(--w);
+   }
+       /* 14. LAHORE SPECIAL PRICE BADGES & ITEM TAGS */
+.badge-lahore {
+    background: linear-gradient(135deg, var(--s), #5a0000);
+    color: var(--p);
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-left: 3px solid var(--p);
+    display: inline-block;
+    margin-bottom: 10px;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+.item-status-tag {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 255, 100, 0.1);
+    color: #00ff64;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.6rem;
+    font-weight: 800;
+    border: 1px solid rgba(0, 255, 100, 0.3);
+    backdrop-filter: blur(5px);
     text-transform: uppercase;
 }
 
-/* DESKTOP FOOTER ADJUSTMENTS */
-@media (min-width: 768px) {
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-    
-    .footer-brand {
-        flex: 1.5;
-    }
-    
-    .footer-info {
-        flex: 1;
-    }
-}
-
-/* UTILITY: HIDE ON MOBILE / HIDE ON PC */
-.hide-mobile { display: none; }
-@media (min-width: 768px) {
-    .hide-mobile { display: block; }
-    .hide-pc { display: none; }
-}
-
-/* FORM FIX - NO BOX OVERFLOW */
-input, textarea {
-    width: 100%; /* Box ke andar rahe ga */
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    font-size: 1rem;
-    outline: none;
-}
-
-input:focus {
-    border-color: var(--s);
-}
-/* MOBILE NAVIGATION ENGINE - NO OVERFLOW */
-.nav-overlay {
-    position: fixed;
+/* 15. DHAMAKEDAR OVERLAY & SOUND-REACTIVE HOVERS */
+.overlay-dhamaka {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-    z-index: 9998;
-    display: none;
-    opacity: 0;
-    transition: var(--a);
+    background: radial-gradient(circle, transparent 20%, var(--t) 150%);
+    pointer-events: none;
+    opacity: 0.6;
 }
 
-.nav-overlay.active {
-    display: block;
-    opacity: 1;
+/* High-Speed Performance Fixes for 4GB RAM */
+.no-lag {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
-/* HAMBURGER TO X ANIMATION */
-.menu-toggle.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
-
-/* GLOBAL IMAGE FIX - PROTOCOL 600 */
-img {
-    max-width: 100%; /* Box se bahar kabhi nahi jaye gi */
-    height: auto;
-    display: block;
-}
-
-/* LAHORE SPECIAL BADGE */
-.badge-lahore {
-    background: linear-gradient(45deg, var(--s), #b22222);
-    color: var(--p);
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-size: 0.7rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
-    display: inline-block;
-    margin-top: 10px;
-}
-
-/* CUSTOM BUTTON HOVERS FOR PC */
-@media (min-width: 1024px) {
-    .btn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+/* 16. MOBILE-FRIENDLY TWEAKS (Final Overload) */
+@media (max-width: 480px) {
+    .section-padding {
+        padding: 50px 5%;
     }
     
-    .btn-p:hover {
-        background: var(--s);
-        color: var(--p);
+    h1 { font-size: 2.2rem !important; line-height: 1.1; }
+    h2 { font-size: 1.6rem !important; }
+    
+    .card-box {
+        padding: 15px;
+        margin-bottom: 15px;
     }
     
-    .btn-s:hover {
-        background: var(--w);
-        color: var(--s);
+    .img-frame {
+        height: 200px;
+    }
+
+    /* Stack buttons on mobile for "Dhamakedar" thumb reach */
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 18px;
+    }
+
+    .social-grid {
+        grid-template-columns: repeat(4, 1fr);
+        display: grid;
     }
 }
 
-/* SYSTEM-READY UTILITIES */
-.flex-col { display: flex; flex-direction: column; }
-.text-center { text-align: center; }
-.full-width { width: 100% !important; }
-.mt-20 { margin-top: 20px; }
-.mb-20 { margin-bottom: 20px; }
-
-/* DENSE SPACING FIX */
-.section-gap {
-    height: 50px;
-    width: 100%;
+/* 17. SCROLLBAR CUSTOMIZATION (Cyberpunk Style) */
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-@media (min-width: 768px) {
-    .section-gap { height: 100px; }
+::-webkit-scrollbar-track {
+    background: var(--t);
 }
 
-/* FINAL TOUCH - SMOOTH ENTRANCE */
-.fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+::-webkit-scrollbar-thumb {
+    background: var(--s);
+    border-radius: 10px;
+    border: 2px solid var(--t);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-   }
-           
+::-webkit-scrollbar-thumb:hover {
+    background: var(--p);
+}
+
+/* FINAL SYSTEM INTEGRITY CHECK */
+/* Protocol 600: Asset-Free Visuals Active */
+/* Memory-Flush: Logic Integrated */
+/* Status: SYSTEM_READY_FOR_INDEX_HTML */
+   
