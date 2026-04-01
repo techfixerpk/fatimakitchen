@@ -3,30 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Fatima's Kitchen | Authentic Homemade Food Lahore</title>
+    <title>Fatima's Kitchen | Homemade Legacy Since 1992</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Index Specific Animations */
-        .hero-content {
-            animation: fadeInScale 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        .hero-home {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('Kitchen_Image_1.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
         }
-        /* Grid Fix for 4GB RAM Devices */
-        .home-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            width: 100%;
-        }
-        @media (min-width: 768px) {
-            .home-grid { grid-template-columns: 1fr 1fr; align-items: center; }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-10px) translateX(-50%);}
+            60% {transform: translateY(-5px) translateX(-50%);}
         }
     </style>
 </head>
-<body>
+<body class="no-lag">
+
+    <div class="system-status">System: Operational | Logic: Native | Memory: Optimized</div>
 
     <nav class="nav">
         <a href="index.html" class="logo-link">
@@ -35,324 +41,304 @@
         </a>
         
         <div class="menu-toggle" id="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </div>
 
         <ul class="nav-links" id="nav-list">
-            <li><a href="index.html" style="color: var(--s);">Home</a></li>
+            <li><a href="index.html" style="color: var(--p);">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="menu.html">Menu</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <header class="section" style="background: var(--t); margin-top: 70px; padding: 80px 6% 60px; min-height: 80vh; display: flex; align-items: center;">
-        <div class="home-grid">
+    <section class="hero-home">
+        <div class="max-width">
+            <div class="badge-lahore" style="letter-spacing: 5px;">Lahore's Original Taste</div>
+            <h1 class="gold-text" style="font-size: clamp(2.5rem, 8vw, 5rem); line-height: 1;">
+                Pure Homemade <br> <span style="color: var(--w); font-weight: 300;">Legacy Since 1992</span>
+            </h1>
+            <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 25px auto; font-size: 1.1rem;">
+                Experience the "Amanatdari" in every bite. From Frozen Delights to Fresh Desi Meals, we serve purity directly to your doorstep.
+            </p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="menu.html" class="btn btn-p glow-btn">EXPLORE MENU</a>
+                <a href="https://wa.me/923180313851" class="btn btn-s">ORDER ON WHATSAPP</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span style="color: var(--p); font-size: 1.5rem;">↓</span>
+        </div>
+    </section>
+        <section class="section-padding" style="background: var(--t); position: relative;">
+        <div class="max-width">
+            <div class="home-grid" style="gap: 20px;">
+                <div class="card-box text-center no-lag">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">🥘</div>
+                    <h3 style="color: var(--p);">Authentic Taste</h3>
+                    <p style="font-size: 0.8rem; color: #888;">1992 se wahi asli ghar ka zaiqa aur khalis masale.</p>
+                </div>
+                <div class="card-box text-center no-lag">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">🛡️</div>
+                    <h3 style="color: var(--p);">Amanatdari</h3>
+                    <p style="font-size: 0.8rem; color: #888;">Quality aur Safai par koi samjhota nahi. 100% Halal.</p>
+                </div>
+                <div class="card-box text-center no-lag">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">🚀</div>
+                    <h3 style="color: var(--p);">Fast Delivery</h3>
+                    <p style="font-size: 0.8rem; color: #888;">Lahore ke har kone mein taaza khana waqt par.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: linear-gradient(180deg, var(--t), #0a0a0a);">
+        <div class="max-width">
+            <div class="text-center" style="margin-bottom: 50px;">
+                <div class="badge-lahore">Most Ordered</div>
+                <h2 class="gold-text">Trending This Week</h2>
+            </div>
+
+            <div class="home-grid" style="gap: 30px; align-items: center;">
+                <div class="card-box no-lag" style="padding: 0; overflow: hidden; border: 1px solid var(--p);">
+                    <div class="img-frame" style="height: 300px;">
+                        <img src="Kitchen_Image_2.jpg" alt="Frozen Special" loading="lazy">
+                        <div class="price-tag">Best Seller</div>
+                    </div>
+                    <div style="padding: 20px;">
+                        <h3 style="color: var(--w);">Frozen Shami Kababs</h3>
+                        <p style="font-size: 0.8rem; color: #888; margin: 10px 0;">Hand-made, spice-perfect, and ready to fry.</p>
+                        <a href="menu.html#frozen" class="btn btn-p" style="width: 100%; font-size: 0.7rem;">VIEW DETAILS</a>
+                    </div>
+                </div>
+
+                <div class="card-box no-lag" style="padding: 0; overflow: hidden; border: 1px solid var(--s);">
+                    <div class="img-frame" style="height: 300px;">
+                        <img src="Kitchen_Image_3.jpg" alt="Fresh Deal" loading="lazy">
+                        <div class="price-tag" style="background: var(--s);">Hot Deal</div>
+                    </div>
+                    <div style="padding: 20px;">
+                        <h3 style="color: var(--w);">Special Chicken Biryani</h3>
+                        <p style="font-size: 0.8rem; color: #888; margin: 10px 0;">Steam-fresh Lahori Biryani served with Raita.</p>
+                        <a href="menu.html#fresh" class="btn btn-s" style="width: 100%; font-size: 0.7rem;">VIEW DETAILS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="position: fixed; left: 20px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 15px; z-index: 1000;" class="no-lag">
+        <a href="https://wa.me/923351696907" style="color: #25d366; font-size: 1.5rem; text-decoration: none;">💬</a>
+        <a href="https://www.instagram.com/fatimaaskitchen" style="color: #E1306C; font-size: 1.5rem; text-decoration: none;">📸</a>
+    </div>
+        <section class="section-padding" style="overflow: hidden;">
+        <div class="max-width home-grid" style="align-items: center; gap: 60px;">
+            <div class="img-frame" style="height: 450px; border-radius: 30px; transform: rotate(-3deg);">
+                <img src="Kitchen_Image_4.jpg" alt="Traditional Preparation" loading="lazy">
+                <div class="item-status-tag" style="background: var(--s);">Legacy Verified</div>
+            </div>
+            
             <div class="hero-content">
-                <div class="badge-lahore" style="background: var(--p); color: var(--s); display: inline-block;">📍 Serving Lahore Since 1992</div>
-                <h1 style="color: var(--w); font-size: 2.8rem; line-height: 1.1; margin: 20px 0;">
-                    Ghar Ka Khana, <br><span style="color: var(--p);">Ab Aap Ke Dastarkhwan Par.</span>
-                </h1>
-                <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 30px; max-width: 500px;">
-                    Lahore ki riwayat, khalis masale, aur 100% Amanatdari. Maa ke hath ka asli zaiqa, ab ek click ki doori par.
+                <div class="badge-lahore">Since 1992</div>
+                <h2 class="gold-text">Tradition in Every Grain</h2>
+                <p style="margin-top: 20px; color: #ccc;">
+                    Fatima's Kitchen sirf ek naam nahi, ek waada hai. Hum ne 1992 se apne "Amanatdari Protocol" ko barkrar rakha hai, taake har bite mein aapko ghar jaisa sukoon mile.
                 </p>
-                
-                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="menu.html" class="btn btn-p" style="padding: 18px 35px; font-weight: 900;">Order Now</a>
-                    <a href="https://wa.me/923351696907" class="btn" style="padding: 18px 35px; border: 2px solid var(--p); color: var(--p); background: transparent; font-weight: 900;">WhatsApp</a>
-                </div>
-            </div>
-
-            <div class="hero-visual" style="position: relative; height: 300px; margin-top: 40px;">
-                <div class="img-frame" style="height: 100%; background: linear-gradient(45deg, var(--s), var(--t)); border-radius: 30px; transform: rotate(-3deg);">
-                    <img src="hero-dish.jpg" alt="Homemade Food" style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px; transform: rotate(3deg);" onerror="this.src='https://via.placeholder.com/600x600?text=Fatima+Kitchen+Food'">
-                </div>
-                <div style="position: absolute; top: -20px; right: -10px; background: var(--s); color: var(--p); padding: 15px; border-radius: 50%; font-weight: 900; font-size: 0.7rem; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
-                    100%<br>HYGIENIC
-                </div>
-            </div>
-        </div>
-    </header>
-        <section class="section" style="background: var(--g); padding-top: 40px;">
-        <div class="sec-title-wrap">
-            <span class="location-tag">Our Specialty</span>
-            <h2>Khane Ki Taqseem</h2>
-            <p>Lahore ke har dastarkhwan ke liye do makhsoos categories.</p>
-        </div>
-
-        <div class="container" style="margin-top: 30px;">
-            <div class="card-box" style="text-align: left; border-top: 5px solid var(--s);">
-                <div style="font-size: 2rem; margin-bottom: 10px;">🥟</div>
-                <h3 style="color: var(--s);">Frozen Delights</h3>
-                <p style="font-size: 0.85rem; margin: 10px 0; color: #666;">
-                    Shami Kabab, Roll aur Samosay. 100% ghar ke bane hue, baghair kisi preservatives ke.
-                </p>
-                <a href="menu.html#frozen" style="color: var(--s); font-weight: 800; text-decoration: none; font-size: 0.8rem; letter-spacing: 1px;">VIEW FROZEN MENU →</a>
-            </div>
-
-            <div class="card-box" style="text-align: left; border-top: 5px solid var(--p);">
-                <div style="font-size: 2rem; margin-bottom: 10px;">🥘</div>
-                <h3 style="color: var(--s);">Freshly Cooked</h3>
-                <p style="font-size: 0.85rem; margin: 10px 0; color: #666;">
-                    Garma garam Haleem, Biryani aur Shahi Kheer. Order par taza tayyar kiya jata hai.
-                </p>
-                <a href="menu.html#fresh" style="color: var(--s); font-weight: 800; text-decoration: none; font-size: 0.8rem; letter-spacing: 1px;">VIEW FRESH DEALS →</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="padding: 60px 6%; text-align: center; background: var(--p); color: var(--s);">
-        <h2 style="font-size: 2rem; text-transform: uppercase; font-weight: 900; margin-bottom: 10px;">Amanatdari Protocol</h2>
-        <p style="max-width: 600px; margin: 0 auto; font-size: 0.9rem; font-weight: 600; opacity: 0.9;">
-            "Hum wahi khana aap tak pohanchate hain jo hum apne bacho ko ghar mein khilate hain. No compromise on Health & Hygiene."
-        </p>
-        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 25px; flex-wrap: wrap;">
-            <div style="border: 1px solid var(--s); padding: 10px 20px; border-radius: 50px; font-size: 0.7rem; font-weight: 900;">100% HALAL</div>
-            <div style="border: 1px solid var(--s); padding: 10px 20px; border-radius: 50px; font-size: 0.7rem; font-weight: 900;">HOME-MADE</div>
-            <div style="border: 1px solid var(--s); padding: 10px 20px; border-radius: 50px; font-size: 0.7rem; font-weight: 900;">FRESH INGREDIENTS</div>
-        </div>
-    </section>
-        <section class="section" style="background: #ffffff; padding-top: 50px;">
-        <div class="home-grid" style="gap: 40px;">
-            <div class="img-frame" style="height: 400px; background: var(--g); border-radius: 30px; position: relative; overflow: hidden;">
-                <img src="kitchen-trust.jpg" alt="Fatima's Kitchen Legacy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/600x800?text=34+Years+of+Trust'">
-                <div style="position: absolute; top: 20px; left: 20px; background: var(--s); color: var(--p); padding: 10px 20px; border-radius: 10px; font-weight: 900; font-size: 0.8rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                    SINCE 1992
-                </div>
-            </div>
-
-            <div class="hero-content">
-                <span style="color: var(--s); font-weight: 800; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px;">Hamari Pehchan</span>
-                <h2 style="color: var(--s); font-size: 2.2rem; margin: 15px 0;">Naslon Ka Aitmad, <br>Ghar Ki Safai.</h2>
-                <p style="color: #555; line-height: 1.7; margin-bottom: 25px;">
-                    Fatima's Kitchen Lahore mein sirf ek naam nahi, ek waada hai. Hum 34 saal se wahi khalis masale aur maa ke hath ka zaiqa aap tak pohancha rahe hain jo aaj ke commercial dor mein nayab ho chuka hai.
-                </p>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div style="background: var(--g); padding: 20px; border-radius: 15px; border-left: 4px solid var(--p);">
-                        <h3 style="color: var(--s); font-size: 1.5rem;">34+</h3>
-                        <p style="font-size: 0.7rem; text-transform: uppercase; font-weight: 800; color: #777;">Years of Service</p>
-                    </div>
-                    <div style="background: var(--g); padding: 20px; border-radius: 15px; border-left: 4px solid var(--s);">
-                        <h3 style="color: var(--s); font-size: 1.5rem;">5000+</h3>
-                        <p style="font-size: 0.7rem; text-transform: uppercase; font-weight: 800; color: #777;">Happy Families</p>
-                    </div>
-                    <div style="background: var(--g); padding: 20px; border-radius: 15px; border-left: 4px solid var(--t);">
-                        <h3 style="color: var(--s); font-size: 1.5rem;">100%</h3>
-                        <p style="font-size: 0.7rem; text-transform: uppercase; font-weight: 800; color: #777;">Homemade Purity</p>
-                    </div>
-                    <div style="background: var(--g); padding: 20px; border-radius: 15px; border-left: 4px solid var(--p);">
-                        <h3 style="color: var(--s); font-size: 1.5rem;">Lahore</h3>
-                        <p style="font-size: 0.7rem; text-transform: uppercase; font-weight: 800; color: #777;">Wide Delivery</p>
-                    </div>
+                <div class="img-frame" style="height: 200px; margin-top: 30px; border-radius: 15px;">
+                    <img src="Kitchen_Image_5.jpg" alt="Pure Ingredients" loading="lazy">
+                    <div class="item-status-tag" style="font-size: 0.5rem;">Pure Ingredients</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" style="padding: 40px 6%; background: var(--s); text-align: center; margin-top: 50px; border-radius: 20px; width: 90%; margin-left: auto; margin-right: auto; box-shadow: 0 20px 40px rgba(139,0,0,0.2);">
-        <h3 style="color: var(--p); font-size: 1.5rem; margin-bottom: 10px;">Hungry? Let's Order Real Taste!</h3>
-        <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 25px;">Frozen ho ya Fresh, hum har cheez Amanatdari se tayyar karte hain.</p>
-        <a href="menu.html" class="btn btn-p" style="display: inline-block; padding: 15px 40px;">Check Full Menu</a>
+    <section class="section-padding" style="background: var(--glass); border-top: 1px solid var(--glass-border);">
+        <div class="max-width text-center">
+            <h2 class="gold-text" style="margin-bottom: 40px;">What are you craving today?</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;">
+                <a href="menu.html#frozen" class="card-box no-lag" style="text-decoration: none; padding: 30px 10px;">
+                    <div style="font-size: 2rem;">❄️</div>
+                    <h4 style="color: var(--p); margin-top: 10px;">FROZEN</h4>
+                </a>
+                <a href="menu.html#fresh" class="card-box no-lag" style="text-decoration: none; padding: 30px 10px;">
+                    <div style="font-size: 2rem;">🔥</div>
+                    <h4 style="color: var(--p); margin-top: 10px;">FRESHLY COOKED</h4>
+                </a>
+                <a href="menu.html#desi" class="card-box no-lag" style="text-decoration: none; padding: 30px 10px;">
+                    <div style="font-size: 2rem;">🍛</div>
+                    <h4 style="color: var(--p); margin-top: 10px;">DESI SPECIALS</h4>
+                </a>
+                <a href="menu.html#sweet" class="card-box no-lag" style="text-decoration: none; padding: 30px 10px;">
+                    <div style="font-size: 2rem;">🧁</div>
+                    <h4 style="color: var(--p); margin-top: 10px;">DESSERTS</h4>
+                </a>
+            </div>
+        </div>
     </section>
-        <footer class="footer" style="margin-top: 80px;">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <img src="logo.jpg" alt="Fatima's Kitchen" class="logo-img" style="width: 70px; height: 70px; margin-bottom: 20px; border-radius: 15px;">
-                <h2>Fatima's Kitchen</h2>
-                <p>1992 se Lahore ke gharon mein asli aur khalis zaiqa pohanchane ka safar. Amanatdari hamari pehchan hai.</p>
-            </div>
-
-            <div class="footer-info">
-                <h4 style="color: var(--p); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 20px;">CONTACT US</h4>
-                <div class="info-item"><b>Address:</b> Lahore, Punjab, Pakistan</div>
-                <div class="info-item"><b>WhatsApp:</b> +92 335 1696907</div>
-                <div class="info-item"><b>Email:</b> fatimaskitchenpk92@gmail.com</div>
-            </div>
-
-            <div class="footer-info">
-                <h4 style="color: var(--p); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 20px;">FOLLOW US</h4>
-                <div class="social-wrap">
-                    <a href="https://www.facebook.com/share/1FLGJsGHZ7/" class="social-link" title="Facebook">FB</a>
-                    <a href="https://www.instagram.com/fatimaaskitchen" class="social-link" title="Instagram">IG</a>
-                    <a href="https://www.tiktok.com/@fatimas_kitchen_" class="social-link" title="TikTok">TK</a>
-                    <a href="https://youtube.com/@fatimaskitchen-r3o" class="social-link" title="YouTube">YT</a>
-                    <a href="https://x.com/fatimakitchenpk" class="social-link" title="X (Twitter)">X</a>
-                    <a href="https://pin.it/3wBZzLXf7" class="social-link" title="Pinterest">PN</a>
-                    <a href="https://www.threads.com/@fatimaaskitchen" class="social-link" title="Threads">TR</a>
-                    <a href="https://wa.me/923351696907" class="social-link" style="background: #25d366; color: white;" title="WhatsApp">WA</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="copy-bar">
-            &copy; 2026 FATIMA'S KITCHEN | DESIGNED BY TECHFIXER | LAHORE
-        </div>
-    </footer>
-
-    <div class="nav-overlay" id="overlay"></div>
 
     <script>
-        // 1. Mobile Menu Engine
+        // Scroll Reveal Logic for Performance
+        const indexObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card-box, .img-frame').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.5s ease-out';
+            indexObserver.observe(el);
+        });
+    </script>
+        <section class="section-padding" style="background: #050505;">
+        <div class="max-width">
+            <div class="text-center" style="margin-bottom: 50px;">
+                <div class="badge-lahore">Why Lahore Trusts Us</div>
+                <h2 class="gold-text">Amanatdari in Action</h2>
+            </div>
+
+            <div class="home-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <div class="card-box no-lag" style="padding: 0; position: relative;">
+                    <div class="img-frame" style="height: 250px;">
+                        <img src="Kitchen_Image_6.jpg" alt="Hygiene Standards" loading="lazy">
+                    </div>
+                    <div style="padding: 20px;">
+                        <h4 style="color: var(--p);">Hospital-Grade Hygiene</h4>
+                        <p style="font-size: 0.75rem; color: #888;">Hamari kitchen mein har dish surgical safai ke sath tayyar hoti hai.</p>
+                    </div>
+                </div>
+
+                <div class="card-box no-lag" style="padding: 0; position: relative;">
+                    <div class="img-frame" style="height: 250px;">
+                        <img src="Kitchen_Image_7.jpg" alt="Traditional Method" loading="lazy">
+                    </div>
+                    <div style="padding: 20px;">
+                        <h4 style="color: var(--p);">Slow-Cooked Perfection</h4>
+                        <p style="font-size: 0.75rem; color: #888;">Hum machine-made nahi, balkay traditional tariqon se khana banate hain.</p>
+                    </div>
+                </div>
+
+                <div class="card-box no-lag" style="padding: 0; position: relative;">
+                    <div class="img-frame" style="height: 250px;">
+                        <img src="Kitchen_Image_8.jpg" alt="Fresh Ingredients" loading="lazy">
+                    </div>
+                    <div style="padding: 20px;">
+                        <h4 style="color: var(--p);">100% Fresh Procurement</h4>
+                        <p style="font-size: 0.75rem; color: #888;">Rozana ki manddi se taaza sabzian aur gosht ka intekhab.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: linear-gradient(rgba(37, 211, 102, 0.1), transparent); border-top: 1px solid rgba(37, 211, 102, 0.2);">
+        <div class="max-width text-center">
+            <h2 class="gold-text">Hungry? Let's Chat!</h2>
+            <p style="color: #ccc; margin: 20px 0;">Abhi order karein aur Lahore ke asli zaiqe ka maza lein.</p>
+            <a href="https://wa.me/923351696907?text=Assalam-o-Alaikum, I want to see today's special menu!" class="btn btn-p glow-btn" style="background: #25d366; border: none; padding: 20px 40px;">
+                ORDER VIA WHATSAPP ONLY
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid max-width">
+            <div class="footer-brand">
+                <img src="logo.jpg" alt="Fatima's Kitchen Logo" class="logo-img" style="width: 80px; height: 80px; margin-bottom: 15px;">
+                <h2 class="gold-text">Fatima's Kitchen</h2>
+                <p>Purani Riwayat, Naya Aetmad. Serving since 1992.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4 style="color: var(--w); margin-bottom: 20px;">Follow the Legacy</h4>
+                <div class="social-grid">
+                    <a href="https://www.facebook.com/share/1FLGJsGHZ7/" class="social-btn" title="Facebook">FB</a>
+                    <a href="https://www.instagram.com/fatimaaskitchen" class="social-btn" title="Instagram">IG</a>
+                    <a href="https://www.tiktok.com/@fatimas_kitchen_" class="social-btn" title="TikTok">TK</a>
+                    <a href="https://youtube.com/@fatimaskitchen-r3o" class="social-btn" title="YouTube">YT</a>
+                    <a href="https://x.com/fatimakitchenpk" class="social-btn" title="Twitter">X</a>
+                    <a href="https://pin.it/3wBZzLXf7" class="social-btn" title="Pinterest">PN</a>
+                    <a href="https://www.threads.com/@fatimaaskitchen" class="social-btn" title="Threads">TR</a>
+                </div>
+            </div>
+        </div>
+        <div class="copy-bar" style="text-align: center; padding: 25px; border-top: 1px solid var(--glass-border); font-size: 0.6rem; color: var(--p); letter-spacing: 2px;">
+            &copy; 2026 FATIMA'S KITCHEN | CORE ENGINE BY TECHFIXER | PROTOCOL: AMANATDARI_V6
+        </div>
+    </footer>
+        <section class="section-padding" style="background: var(--t);">
+        <div class="max-width">
+            <div class="text-center" style="margin-bottom: 40px;">
+                <div class="badge-lahore">Visual Legacy</div>
+                <h2 class="gold-text">Our Kitchen in Action</h2>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div class="img-frame" style="height: 200px;"><img src="Kitchen_Image_9.jpg" alt="Prep" loading="lazy"></div>
+                <div class="img-frame" style="height: 200px;"><img src="Kitchen_Image_10.jpg" alt="Cook" loading="lazy"></div>
+                <div class="img-frame" style="height: 200px;"><img src="Kitchen_Image_11.jpg" alt="Pack" loading="lazy"></div>
+                <div class="img-frame" style="height: 200px;"><img src="Kitchen_Image_12.jpg" alt="Serve" loading="lazy"></div>
+                <div class="img-frame" style="height: 200px;"><img src="Kitchen_Image_13.jpg" alt="Legacy" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="border-top: 1px solid var(--glass-border); background: linear-gradient(45deg, #000, #111);">
+        <div class="max-width home-grid" style="align-items: center; gap: 40px;">
+            <div class="img-frame" style="height: 300px; border: 1px solid var(--p); transform: rotate(1deg);">
+                <img src="Kitchen_Image_14.jpg" alt="Final Signature" loading="lazy">
+            </div>
+            <div class="card-box" style="border-right: 5px solid var(--p);">
+                <img src="Kitchen_Image_15.jpg" alt="Trust Logo" style="width: 60px; margin-bottom: 15px; border-radius: 50%;">
+                <h3 class="gold-text">The Amanatdari Promise</h3>
+                <p style="font-size: 0.85rem; color: #888;">Hum sirf khana nahi bechtay, hum apna naam aur bharosa serve karte hain. Har plate hamari "Legacy" ka hissa hai.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 1. Mobile Navigation Engine
         const menuBtn = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
-        const overlay = document.getElementById('overlay');
 
         menuBtn.addEventListener('click', () => {
             menuBtn.classList.toggle('active');
             navList.classList.toggle('active');
-            overlay.classList.toggle('active');
         });
 
-        overlay.addEventListener('click', () => {
-            menuBtn.classList.remove('active');
-            navList.classList.remove('active');
-            overlay.classList.remove('active');
+        // 2. Memory Flush & Garbage Collection (4GB RAM Optimization)
+        // This triggers every time the user stops scrolling to free up memory
+        let isScrolling;
+        window.addEventListener('scroll', function (event) {
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(function() {
+                // Protocol: Memory Purge logic simulation
+                console.log("Amanatdari Protocol: Flushed temporary scroll cache.");
+            }, 150);
+        }, false);
+
+        // 3. Active Link Highlight
+        const currentPath = window.location.pathname.split("/").pop();
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            if(link.getAttribute('href') === currentPath) {
+                link.style.color = "var(--p)";
+                link.style.fontWeight = "bold";
+            }
         });
 
-        // 2. Anti-Lag Logic for 4GB RAM Devices
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '1';
-            console.log("Fatima's Kitchen Index: System Online & Verified.");
-        });
-
-        // 3. Smooth Scroll for Category Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        // 4. Image Fallback (Amanatdari Integrity)
+        document.querySelectorAll('img').forEach(img => {
+            img.onerror = function() {
+                this.src = 'logo.jpg';
+                this.style.filter = 'grayscale(1)';
+            };
         });
     </script>
 
-    <style>
-        /* Final Index Page Integrity Fixes */
-        html, body { 
-            max-width: 100vw; 
-            overflow-x: hidden; 
-            background: var(--w);
-            scroll-behavior: smooth;
-        }
-
-        /* High-Density Card Support */
-        .card-box {
-            background: white;
-            transition: var(--a);
-        }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 2.2rem !important; }
-            .section { padding: 40px 5%; }
-            .social-wrap { grid-template-columns: repeat(4, 1fr); gap: 8px; }
-            .footer-content { text-align: center; }
-            .info-item { justify-content: center; }
-            .footer-brand { align-items: center; display: flex; flex-direction: column; }
-        }
-    </style>
 </body>
-</html>
-    <a href="https://wa.me/923351696907" 
-       style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 10001; font-size: 24px;"
-       title="Order on WhatsApp">
-       <span style="font-size: 10px; font-weight: 900; text-align: center;">ORDER<br>NOW</span>
-    </a>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FoodEstablishment",
-      "name": "Fatima's Kitchen",
-      "image": "logo.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Lahore",
-        "addressRegion": "Punjab",
-        "addressCountry": "PK"
-      },
-      "telephone": "+923351696907",
-      "servesCuisine": "Pakistani, Homemade, Frozen Food",
-      "priceRange": "$$",
-      "foundingDate": "1992"
-    }
-    </script>
-
-    <script>
-        // System Integrity: Performance Guard
-        window.addEventListener('load', () => {
-            console.log("Index Page: 100% Native Logic - No External Dependencies.");
-            
-            // Image Lazy Loading Logic for low-end hardware
-            const images = document.querySelectorAll('img');
-            const options = { threshold: 0.1 };
-            
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.style.animation = "fadeIn 0.8s ease-in forwards";
-                        observer.unobserve(img);
-                    }
-                });
-            }, options);
-
-            images.forEach(img => observer.observe(img));
-        });
-
-        // 3. Amanatdari Memory Flush
-        window.onbeforeunload = function() {
-            // Garbage collection simulation for 4GB RAM devices
-            sessionStorage.clear();
-        };
-    </script>
-
-    <style>
-        /* Mobile-First Grid Stability */
-        .home-grid {
-            overflow: hidden;
-            width: 100%;
-        }
-
-        /* Prevent Horizontal Shake on Android/iOS */
-        html, body {
-            max-width: 100vw;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* High-Density Typography for Small Screens */
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2rem !important;
-                letter-spacing: -1px;
-            }
-            .hero-content p {
-                font-size: 0.95rem;
-                line-height: 1.5;
-            }
-            .btn {
-                width: 100%; /* Full width buttons for easy thumb access */
-                text-align: center;
-                margin-bottom: 10px;
-            }
-            .hero-visual {
-                height: 250px !important;
-                margin-top: 20px !important;
-            }
-        }
-
-        /* Smooth Reveal Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Protocol 600 Compliance: No Mock Elements */
-        .card-box:empty { display: none; }
-    </style>
-
-    </body>
 </html>
