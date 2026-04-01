@@ -1,30 +1,254 @@
-<!DOCTYPE html><html><head><title>About Us | Fatima Kitchen</title><link rel="stylesheet" href="style.css"></head><body>
-
-    <nav>
-        <div class="logo">Fatima Kitchen</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    <header class="hero">
-        <h1>Hamari Kahani</h1>
-        <p>Fatima Kitchen: Mohabbat se bhara zaiqa.</p>
-    </header>
-<div class="container">
-    <div style="display:flex; align-items:center; gap:40px; flex-wrap:wrap;">
-        <img src="logo.jpg" style="width:300px; border-radius:15px; box-shadow:0 10px 20px rgba(0,0,0,0.1);">
-        <div style="flex:1; min-width:300px;">
-            <h2>Fatima Kitchen Kyun?</h2>
-            <p style="margin-top:15px; font-size:1.1rem;">Hamari shuruat Lahore ke aik chote se kitchen se hui. Hamara khwab tha ke har ghar tak wo zaiqa pohnchayein jo sirf maan ke hath mein hota hai. Aaj hum Lahore ke senkro gharon mein apni frozen products aur fresh meals pohncha rahe hain.</p>
-            <ul style="margin-top:20px; list-style:inside square;">
-                <li>100% Halal aur Taza Ingredients</li>
-                <li>No Artificial Preservatives</li>
-                <li>Timely Delivery in Lahore</li>
-            </ul>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Fatima's Kitchen</title>
+<style>
+:root{--p:#ffcc00;--s:#8b0000;--t:#3d2b1f;--w:#ffffff;--g:#f4f4f4;--a:0.4s ease-in-out;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Roboto,sans-serif;}
+body{background:var(--g);color:var(--t);overflow-x:hidden;line-height:1.6;}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-thumb{background:var(--s);border-radius:10px;}
+.nav{width:100%;height:80px;background:rgba(255,255,255,0.95);display:flex;justify-content:space-between;align-items:center;padding:0 5%;position:fixed;top:0;z-index:1000;box-shadow:0 2px 15px rgba(0,0,0,0.1);backdrop-filter:blur(10px);}
+.logo{display:flex;align-items:center;text-decoration:none;cursor:pointer;transition:var(--a);}
+.logo:hover{transform:scale(1.05);}
+.logo-circle{width:50px;height:50px;background:var(--p);border-radius:50%;border:2px solid var(--s);display:flex;justify-content:center;align-items:center;font-weight:bold;color:var(--s);font-size:12px;text-align:center;box-shadow:0 0 10px rgba(255,204,0,0.5);}
+.logo-text{margin-left:12px;font-size:22px;font-weight:800;color:var(--s);text-transform:uppercase;letter-spacing:1px;}
+.nav-links{display:flex;gap:25px;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--t);font-weight:600;font-size:15px;transition:var(--a);position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-5px;left:0;width:0%;height:2px;background:var(--s);transition:var(--a);}
+.nav-links a:hover{color:var(--s);}
+.nav-links a:hover::after{width:100%;}
+.hero-about{width:100%;height:60vh;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),repeating-linear-gradient(45deg, #3d2b1f 0px, #3d2b1f 20px, #2d1b0f 20px, #2d1b0f 40px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:var(--w);margin-top:80px;position:relative;overflow:hidden;}
+.hero-about::before{content:'';position:absolute;width:200%;height:200%;background:radial-gradient(circle, rgba(255,204,0,0.1) 0%, transparent 70%);animation:rotate 20s linear infinite;}
+@keyframes rotate{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.hero-h1{font-size:4rem;text-transform:uppercase;letter-spacing:5px;margin-bottom:15px;text-shadow:3px 3px 10px rgba(0,0,0,0.5);z-index:1;animation:fadeInDown 1s ease;}
+.hero-p{font-size:1.2rem;max-width:700px;z-index:1;animation:fadeInUp 1s ease;color:var(--p);font-weight:300;}
+.scroll-indicator{position:absolute;bottom:20px;width:30px;height:50px;border:2px solid var(--w);border-radius:15px;z-index:1;}
+.scroll-indicator::after{content:'';position:absolute;top:5px;left:50%;transform:translateX(-50%);width:6px;height:6px;background:var(--p);border-radius:50%;animation:scroll 2s infinite;}
+@keyframes scroll{0%{top:5px;opacity:1;}100%{top:35px;opacity:0;}}
+.section-wrapper{padding:80px 10%;position:relative;}
+.glass-card{background:rgba(255,255,255,0.8);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,0.3);border-radius:25px;padding:50px;box-shadow:0 20px 40px rgba(0,0,0,0.05);display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:center;margin-bottom:100px;}
+.visual-box{width:100%;height:450px;background:var(--p);border-radius:20px;position:relative;overflow:hidden;box-shadow:inset 0 0 50px rgba(0,0,0,0.1);display:flex;justify-content:center;align-items:center;}
+.visual-box::after{content:'FK';font-size:150px;font-weight:900;color:rgba(255,255,255,0.2);}
+.story-content h2{font-size:2.5rem;color:var(--s);margin-bottom:20px;position:relative;}
+.story-content h2::after{content:'';display:block;width:60px;height:4px;background:var(--p);margin-top:10px;}
+.story-content p{font-size:1.1rem;margin-bottom:25px;text-align:justify;color:#555;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px;}
+.stat-item{text-align:center;padding:20px;background:var(--w);border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:var(--a);}
+.stat-item:hover{transform:translateY(-10px);background:var(--s);color:var(--w);}
+.stat-num{font-size:2rem;font-weight:800;display:block;margin-bottom:5px;}
+.stat-label{font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:600;}
+.mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin:100px 0;perspective:1000px;}
+.mission-card{background:var(--w);padding:60px 40px;border-radius:30px;text-align:center;box-shadow:0 15px 40px rgba(0,0,0,0.05);transition:var(--a);position:relative;overflow:hidden;border:1px solid rgba(0,0,0,0.03);}
+.mission-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle, var(--p) 0%, transparent 70%);opacity:0;transition:var(--a);z-index:0;}
+.mission-card:hover::before{opacity:0.1;transform:scale(1.2);}
+.mission-card:hover{transform:translateY(-20px) rotateX(5deg);border-color:var(--p);}
+.mission-card *{position:relative;z-index:1;}
+.m-icon{width:80px;height:80px;background:var(--s);margin:0 auto 30px;border-radius:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 20px rgba(139,0,0,0.3);transform:rotate(45deg);transition:var(--a);}
+.mission-card:hover .m-icon{transform:rotate(0deg) scale(1.1);background:var(--p);}
+.m-icon i{transform:rotate(-45deg);color:var(--w);font-size:30px;font-weight:900;}
+.mission-card:hover .m-icon i{transform:rotate(0deg);color:var(--s);}
+.mission-card h3{font-size:1.8rem;color:var(--s);margin-bottom:15px;text-transform:uppercase;letter-spacing:1px;}
+.mission-card p{color:#666;font-size:0.95rem;line-height:1.8;}
+.values-strip{width:100%;background:var(--s);padding:60px 0;display:flex;overflow:hidden;position:relative;margin:100px 0;}
+.values-track{display:flex;white-space:nowrap;animation:marquee 30s linear infinite;}
+@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.value-text{font-size:3.5rem;font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(255,204,0,0.3);margin:0 50px;text-transform:uppercase;letter-spacing:10px;}
+.value-text span{color:var(--p);-webkit-text-stroke:0;}
+.chef-story{display:flex;align-items:center;gap:80px;background:var(--t);color:var(--w);padding:100px 10%;border-radius:100px 0 100px 0;margin:100px 0;box-shadow:50px 50px 0 var(--p);}
+.chef-img-box{flex:1;height:550px;background:linear-gradient(135deg, #4d3b2f, #2d1b0f);border-radius:50px;position:relative;display:flex;justify-content:center;align-items:center;overflow:hidden;border:5px solid rgba(255,204,0,0.2);}
+.chef-img-box::before{content:'';position:absolute;width:100%;height:100%;background:repeating-conic-gradient(from 0deg, var(--p) 0deg 10deg, transparent 10deg 20deg);opacity:0.05;animation:spin 60s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.chef-info{flex:1.5;}
+.chef-tag{background:var(--p);color:var(--s);padding:8px 20px;border-radius:50px;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:2px;display:inline-block;margin-bottom:20px;}
+.chef-info h2{font-size:3.5rem;line-height:1.1;margin-bottom:30px;font-weight:900;}
+.chef-info p{font-size:1.1rem;color:rgba(255,255,255,0.7);margin-bottom:30px;border-left:4px solid var(--p);padding-left:30px;}
+.btn-gold{padding:18px 45px;background:var(--p);color:var(--s);text-decoration:none;font-weight:800;border-radius:15px;display:inline-block;transition:var(--a);box-shadow:0 10px 25px rgba(255,204,0,0.3);text-transform:uppercase;letter-spacing:1px;position:relative;overflow:hidden;}
+.btn-gold:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 15px 35px rgba(255,204,0,0.5);background:var(--w);}
+    .scroll-reveal{opacity:0;transform:translateY(30px);transition:all 0.8s ease-out;}
+.scroll-reveal.active{opacity:1;transform:translateY(0);}
+.footer-lite{background:var(--t);padding:100px 10% 50px;color:var(--w);display:grid;grid-template-columns:repeat(4,1fr);gap:40px;border-top:10px solid var(--s);}
+.footer-col h4{font-size:1.5rem;margin-bottom:25px;color:var(--p);position:relative;padding-bottom:10px;}
+.footer-col h4::after{content:'';position:absolute;bottom:0;left:0;width:40px;height:2px;background:var(--s);}
+.footer-col p{font-size:0.9rem;opacity:0.7;margin-bottom:20px;}
+.social-links{display:flex;gap:15px;margin-top:20px;}
+.social-icon{width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:var(--a);text-decoration:none;color:var(--w);font-size:18px;border:1px solid rgba(255,255,255,0.05);}
+.social-icon:hover{background:var(--p);color:var(--s);transform:rotate(15deg) scale(1.1);box-shadow:0 0 20px rgba(255,204,0,0.3);}
+.footer-links{list-style:none;}
+.footer-links li{margin-bottom:12px;}
+.footer-links a{color:rgba(255,255,255,0.6);text-decoration:none;transition:var(--a);font-size:0.95rem;}
+.footer-links a:hover{color:var(--p);padding-left:10px;}
+.contact-info-item{display:flex;align-items:center;gap:15px;margin-bottom:15px;color:rgba(255,255,255,0.8);}
+.contact-info-item i{color:var(--p);font-size:20px;}
+.copyright{grid-column:1 / -1;text-align:center;padding-top:50px;margin-top:50px;border-top:1px solid rgba(255,255,255,0.05);font-size:0.8rem;letter-spacing:2px;color:rgba(255,255,255,0.4);}
+@media(max-width:1024px){.glass-card,.mission-grid,.chef-story{grid-template-columns:1fr;display:block;}.stats-grid{grid-template-columns:repeat(2,1fr);}.footer-lite{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:768px){.hero-h1{font-size:2.5rem;}.footer-lite{grid-template-columns:1fr;}.nav-links{display:none;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<a href="index.html" class="logo">
+<div class="logo-circle">FATIMA'S<br>KITCHEN</div>
+<span class="logo-text">Fatima's Kitchen</span>
+</a>
+<ul class="nav-links">
+<li><a href="index.html">HOME</a></li>
+<li><a href="about.html" style="color:var(--s);">ABOUT</a></li>
+<li><a href="menu.html">MENU</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+</ul>
+<a href="https://wa.me/923180313851" class="btn-gold" style="padding:10px 25px;font-size:12px;">ORDER NOW</a>
+</nav>
+<header class="hero-about">
+<h1 class="hero-h1">Humaray Baray Mein</h1>
+<p class="hero-p">Fatima's Kitchen sirf khana nahi, aik ehsas hai—ghar jaisa zaiqa, Amanatdari ke sath.</p>
+<div class="scroll-indicator"></div>
+</header>
+<main class="section-wrapper">
+<section class="glass-card scroll-reveal">
+<div class="visual-box">
+<div style="width:80%;height:80%;border:2px dashed rgba(255,255,255,0.5);border-radius:20px;display:flex;justify-content:center;align-items:center;text-align:center;padding:20px;">
+<span style="color:var(--w);font-weight:900;font-size:2rem;text-shadow:2px 2px 5px rgba(0,0,0,0.2);">TRADITION<br>MEETS<br>MODERNITY</span>
 </div>
-<footer><p>&copy; 2024 Fatima Kitchen</p></footer></body></html>
+</div>
+<div class="story-content">
+<span style="color:var(--s);font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:14px;">Our Legacy</span>
+<h2>Fatima's Kitchen Ki Kahani</h2>
+<p>Fatima's Kitchen ka aghaz aik pur-khulus maqsad se hua: har ghar tak "Freshly Hygienic Home Made Frozen Food" pohanchana. Hum mante hain ke behtareen khana wahi hai jo dil se banaya jaye aur jis mein zaiqa aur sehat dono shamil hon.</p>
+<p>Hamari har dish, paratha ho ya karahi, Amanatdari (Honesty) aur Excellence ke asoolon par bani hai. Hum sirf ingredients nahi, balke apni legacy serve karte hain jo 1992 se hamari pehchan hai.</p>
+<div class="stats-grid">
+<div class="stat-item"><span class="stat-num">30+</span><span class="stat-label">Years Exp</span></div>
+<div class="stat-item"><span class="stat-num">50+</span><span class="stat-label">Dishes</span></div>
+<div class="stat-item"><span class="stat-num">10k+</span><span class="stat-label">Happy Clients</span></div>
+<div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Halal Food</span></div>
+</div>
+</div>
+</section>
+<section class="mission-grid">
+<div class="mission-card scroll-reveal">
+<div class="m-icon"><i>🎯</i></div>
+<h3>Hamara Maqsad</h3>
+<p>Ghar jaisa khana aur shafaf tareeqa-e-kar. Hum chahte hain ke har dastarkhuan par Fatima's Kitchen ka zaiqa aur Amanatdari ki misal ho.</p>
+</div>
+<div class="mission-card scroll-reveal">
+<div class="m-icon"><i>👁️</i></div>
+<h3>Hamara Vision</h3>
+<p>Pakistan ka sab se bharose-mand home-made frozen food brand banna, jahan quality par koi samjhota na ho aur zaiqa hamesha yaadgaar rahe.</p>
+</div>
+<div class="mission-card scroll-reveal">
+<div class="m-icon"><i>⭐</i></div>
+<h3>Hamari Values</h3>
+<p>Safai (Hygiene), Halal ingredients, aur customer ki khushi hamari awalin tarjih hai. Hum jo kehte hain, wahi serve karte hain.</p>
+</div>
+</section>
+</main>
+<div class="values-strip">
+<div class="values-track">
+<div class="value-text">AMANATDARI <span>•</span></div>
+<div class="value-text">HYGIENIC <span>•</span></div>
+<div class="value-text">TRADITION <span>•</span></div>
+<div class="value-text">EXCELLENCE <span>•</span></div>
+<div class="value-text">AMANATDARI <span>•</span></div>
+<div class="value-text">HYGIENIC <span>•</span></div>
+<div class="value-text">TRADITION <span>•</span></div>
+<div class="value-text">EXCELLENCE <span>•</span></div>
+</div>
+</div>
+<section class="section-wrapper">
+<div class="chef-story scroll-reveal">
+<div class="chef-img-box">
+<div style="text-align:center;color:var(--p);">
+<span style="font-size:80px;display:block;">👩‍🍳</span>
+<span style="font-weight:900;letter-spacing:5px;">SINCE 1992</span>
+</div>
+</div>
+<div class="chef-info">
+<span class="chef-tag">Founder & Master Chef</span>
+<h2>Zaiqa Jo Dil Jeet Lay</h2>
+<p>Fatima's Kitchen ki bunyad tajurbe aur mohabbat par rakhi gayi hai. Hamari Master Chef ne saalon ki mehnat se wo recipes tayaar ki hain jo aaj hamari pehchan hain. Har masala khud select kiya jata hai aur har dish ko ghar ki tarah monitor kiya jata hai.</p>
+<p>Hum sirf food catering nahi karte, hum aap ke events ko zaiqe se bhar dete hain. Chahe Wedding ho, Office event ho ya Birthday—hum har mauqe ko khaas banate hain.</p>
+<div style="display:flex;gap:20px;margin-top:40px;">
+<div style="border-right:1px solid rgba(255,255,255,0.1);padding-right:20px;">
+<h4 style="color:var(--p);font-size:24px;">100%</h4>
+<p style="font-size:12px;opacity:0.6;">Home Made</p>
+</div>
+<div style="border-right:1px solid rgba(255,255,255,0.1);padding-right:20px;">
+<h4 style="color:var(--p);font-size:24px;">Fresh</h4>
+<p style="font-size:12px;opacity:0.6;">Ingredients</p>
+</div>
+<div>
+<h4 style="color:var(--p);font-size:24px;">Fast</h4>
+<p style="font-size:12px;opacity:0.6;">Delivery</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="footer-lite">
+<div class="footer-col">
+<h4>Fatima's Kitchen</h4>
+<p>1992 se aapke zaiqe ka muhafiz. Hum ghar ka bana khana pure Pakistan mein deliver karte hain, Amanatdari aur quality ke saath.</p>
+<div class="social-links">
+<a href="https://www.facebook.com/share/1FLGJsGHZ7/" class="social-icon">f</a>
+<a href="https://www.instagram.com/fatimaaskitchen" class="social-icon">ig</a>
+<a href="https://www.tiktok.com/@fatimas_kitchen_" class="social-icon">tk</a>
+<a href="https://youtube.com/@fatimaskitchen-r3o" class="social-icon">yt</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="menu.html">Our Menu</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Humaray Khane</h4>
+<ul class="footer-links">
+<li><a href="menu.html">Frozen Paratha</a></li>
+<li><a href="menu.html">Chicken Haleem</a></li>
+<li><a href="menu.html">Special Shawarma</a></li>
+<li><a href="menu.html">Desi Karahi</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact Us</h4>
+<div class="contact-info-item"><i>📍</i> <span>Pakistan (Worldwide Service)</span></div>
+<div class="contact-info-item"><i>📞</i> <span>0318-0313851</span></div>
+<div class="contact-info-item"><i>✉️</i> <span>info@fatimakitchen.com</span></div>
+<div class="contact-info-item"><i>💬</i> <span>WhatsApp Only: +92 335 1696907</span></div>
+</div>
+<div class="copyright">
+&copy; 2026 FATIMA'S KITCHEN | DESIGNED BY TECHFIXER | ALL RIGHTS RESERVED
+</div>
+</footer>
+
+<script>
+const observerOptions = {threshold: 0.1};
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('active');
+}
+});
+}, observerOptions);
+
+document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+
+window.addEventListener('scroll', () => {
+const nav = document.querySelector('.nav');
+if (window.scrollY > 50) {
+nav.style.height = '70px';
+nav.style.background = 'rgba(255,255,255,0.98)';
+} else {
+nav.style.height = '80px';
+nav.style.background = 'rgba(255,255,255,0.95)';
+}
+});
+</script>
+</body>
+</html>
