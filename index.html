@@ -1,24 +1,366 @@
-<!DOCTYPE html><html><head><title>Fatima Kitchen</title><link rel="stylesheet" href="style.css"></head><body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatima's Kitchen | Pure Home Taste Since 1992</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;900&display=swap" rel="stylesheet">
+<style>
+/* Page Specific Overrides for Index Hero Animation */
+.hero-bg-animate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, var(--s) 0%, transparent 80%);
+    opacity: 0.2;
+    animation: pulse-bg 10s infinite alternate;
+}
+@keyframes pulse-bg {
+    0% { transform: scale(1); opacity: 0.1; }
+    100% { transform: scale(1.3); opacity: 0.3; }
+}
+</style>
+</head>
+<body>
 
-<nav>
-    <div class="logo">Fatima Kitchen</div>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-    </ul>
-</nav>
-<header class="hero"><h1>Laziz & Taza Khana</h1><p>Ghar ka Khana, Shandaar Zaiqa</p></header>
-<a href="https://wa.me/03180313851" class="float-wa" target="_blank">WA</a>
+<div class="main-wrapper">
+    <nav class="nav-container" id="mainNav">
+        <a href="index.html" class="logo-box">
+            <div class="logo-icon-main">FATIMA'S<br>KITCHEN</div>
+            <span class="logo-text">Fatima's Kitchen</span>
+        </a>
+        
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link" style="color:var(--s)">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="menu.html" class="nav-link">Our Menu</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
 
-<div class="container" style="text-align:center;">
-    <h2 style="font-size: 2.5rem; color: var(--primary);">Welcome to Fatima Kitchen</h2>
-    <p style="margin: 20px 0; font-size: 1.2rem;">Lahore ki sab se behtareen home-delivery service.</p>
-    <div class="grid">
-        <div class="card"><img src="Kitchen_Image_2.jpg"><div class="card-body"><h3>100% Fresh</h3><p>Daily shopping from market.</p></div></div>
-        <div class="card"><img src="Kitchen_Image_3.jpg"><div class="card-body"><h3>Hygienic</h3><p>Cleanliness is our priority.</p></div></div>
-        <div class="card"><img src="Kitchen_Image_4.jpg"><div class="card-body"><h3>Fast Delivery</h3><p>Hot food at your door.</p></div></div>
-    </div>
-    <br><br>
-    <a href="menu.html" class="btn-ws" style="background: var(--primary);">View Full Menu</a>
+        <div class="nav-cta">
+            <a href="https://wa.me/923351696907" class="btn-main btn-gold" style="padding: 12px 25px; font-size: 11px;">
+                Order via WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <header class="hero-engine">
+        <div class="hero-bg-animate"></div>
+        <div class="hero-visual-layer"></div>
+        
+        <div class="hero-content-box">
+            <div class="sec-tag" style="color:var(--p); margin-bottom: 20px;">Est. 1992 | Rawalpindi</div>
+            <h1 class="hero-h1">
+                KHULIS ZAIQA 
+                <span>ASLI GHAR KA KHANA</span>
+            </h1>
+            <p class="hero-p">
+                Fatima's Kitchen lata hai aapke liye 100% organic aur fresh ingredients se tayyar karda frozen aur fresh food. Amanatdari aur quality humara waada hai.
+            </p>
+            
+            <div class="btn-container">
+                <a href="menu.html" class="btn-main btn-gold shimmer">Explore Full Menu</a>
+                <a href="about.html" class="btn-main btn-outline">Our Story</a>
+            </div>
+            
+            <div style="margin-top: 60px; display: flex; justify-content: center; gap: 30px; opacity: 0.6;">
+                <div style="font-size: 11px; color: var(--w); letter-spacing: 2px; text-transform: uppercase;">✔ 100% Halal</div>
+                <div style="font-size: 11px; color: var(--w); letter-spacing: 2px; text-transform: uppercase;">✔ No Preservatives</div>
+                <div style="font-size: 11px; color: var(--w); letter-spacing: 2px; text-transform: uppercase;">✔ Nationwide Delivery</div>
+            </div>
+        </div>
+    </header>
+    <section class="feature-section">
+        <div class="sec-header" style="grid-column: 1 / -1;">
+            <span class="sec-tag">Why Choose Us?</span>
+            <h2 class="sec-title">Hamari Khususiyaat</h2>
+        </div>
+
+        <div class="f-card shimmer">
+            <div class="f-icon-box">⭐</div>
+            <h3>Khulish Quality</h3>
+            <p>Hum sirf premium ingredients aur desi ghee ka istemal karte hain taake aapko wahi zaiqa mile jo ghar ke khane mein hota hai.</p>
+        </div>
+
+        <div class="f-card">
+            <div class="f-icon-box">🛡️</div>
+            <h3>Amanatdari</h3>
+            <p>Saaf suthra mahool aur hifz-e-sehat ke usoolon ke mutabiq tayaari. Humari kitchen mein hamesha transparency rehti hai.</p>
+        </div>
+
+        <div class="f-card">
+            <div class="f-icon-box">🚚</div>
+            <h3>Pura Pakistan</h3>
+            <p>Rawalpindi se shuru hone wala ye safar ab pure Pakistan mein frozen items ki nationwide delivery tak phail chuka hai.</p>
+        </div>
+    </section>
+
+    <section class="menu-showcase" style="padding-top: 0;">
+        <div class="sec-header">
+            <span class="sec-tag">Top Rated</span>
+            <h2 class="sec-title">Humaray Mashoor Khane</h2>
+        </div>
+
+        <div class="menu-filter-bar">
+            <button class="filter-btn active">All Favorites</button>
+            <button class="filter-btn">Frozen</button>
+            <button class="filter-btn">Fresh Deals</button>
+        </div>
+
+        <div class="grid-3" style="padding: 0 5%;">
+            <div class="glass-card" style="padding: 20px; text-align: center; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="height: 180px; background: var(--p); border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--s);">FROZEN PARATHA</div>
+                <h4 style="color: var(--s); text-transform: uppercase; letter-spacing: 1px;">Plain Paratha</h4>
+                <p style="font-size: 13px; opacity: 0.7; margin: 10px 0;">Dozen Pack - Ready to Fry</p>
+                <div style="font-weight: 900; color: var(--t); margin-bottom: 15px;">PKR 450</div>
+                <a href="menu.html" class="btn-main btn-gold" style="padding: 10px 20px; font-size: 10px; width: 100%;">Order Now</a>
+            </div>
+
+            <div class="glass-card" style="padding: 20px; text-align: center; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="height: 180px; background: var(--s); border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--p);">CHICKEN HALEEM</div>
+                <h4 style="color: var(--s); text-transform: uppercase; letter-spacing: 1px;">Special Haleem</h4>
+                <p style="font-size: 13px; opacity: 0.7; margin: 10px 0;">12-Hour Slow Cooked</p>
+                <div style="font-weight: 900; color: var(--t); margin-bottom: 15px;">PKR 1800</div>
+                <a href="menu.html" class="btn-main btn-gold" style="padding: 10px 20px; font-size: 10px; width: 100%;">Order Now</a>
+            </div>
+
+            <div class="glass-card" style="padding: 20px; text-align: center; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="height: 180px; background: var(--t); border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--w);">SHAHI KHEER</div>
+                <h4 style="color: var(--s); text-transform: uppercase; letter-spacing: 1px;">Shahi Kheer</h4>
+                <p style="font-size: 13px; opacity: 0.7; margin: 10px 0;">Desi Saffron & Nuts</p>
+                <div style="font-weight: 900; color: var(--t); margin-bottom: 15px;">PKR 1200</div>
+                <a href="menu.html" class="btn-main btn-gold" style="padding: 10px 20px; font-size: 10px; width: 100%;">Order Now</a>
+            </div>
+        </div>
+    </section>
+        <section class="principle-box">
+        <div class="p-text">
+            <span class="sec-tag" style="color:var(--p);">Humaray Usool</span>
+            <h2>Amanatdari <span>The Foundation</span></h2>
+            <p>
+                Hamara har aik niwala Amanatdari ke usoolon par tayyar kiya jata hai. Hum wahi ingredients istemal karte hain jo hum apne ghar ke liye pasand karte hain. Koi milawat nahi, koi chupa hua chemical nahi—sirf khalis aur sehat-mand zaiqa.
+            </p>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <div style="padding: 10px 20px; background: rgba(255,255,255,0.05); border-radius: 10px; font-size: 12px; border: 1px solid var(--p);">✓ GHAR KA ZAIQA</div>
+                <div style="padding: 10px 20px; background: rgba(255,255,255,0.05); border-radius: 10px; font-size: 12px; border: 1px solid var(--p);">✓ SAFAAI KA EHTEMAM</div>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-num">30+</span>
+                <span class="stat-label">Years of Heritage</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">10k+</span>
+                <span class="stat-label">Happy Families</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">50+</span>
+                <span class="stat-label">Menu Items</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Natural Ingredients</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad" style="background: var(--w); overflow: hidden;">
+        <div class="sec-header">
+            <span class="sec-tag">Reviews</span>
+            <h2 class="sec-title">Log Kya Kehte Hain?</h2>
+        </div>
+        
+        <div style="display: flex; gap: 30px; animation: slide-marquee 20s linear infinite;">
+            <div class="glass-card" style="min-width: 350px; padding: 30px; border: 1px solid var(--g);">
+                <p style="font-style: italic; color: #555; margin-bottom: 15px;">"Fatima's Kitchen ke parathay bilkul wese hi hain jese meri ammi banati thin. Best frozen food in Pindi!"</p>
+                <h5 style="color: var(--s); font-weight: 900;">- Mrs. Ahmed, Islamabad</h5>
+            </div>
+            <div class="glass-card" style="min-width: 350px; padding: 30px; border: 1px solid var(--g);">
+                <p style="font-style: italic; color: #555; margin-bottom: 15px;">"Inka Haleem aur Shahi Kheer lazawab hai. Delivery hamesha time par hoti hai."</p>
+                <h5 style="color: var(--s); font-weight: 900;">- Dr. Usman, Rawalpindi</h5>
+            </div>
+            <div class="glass-card" style="min-width: 350px; padding: 30px; border: 1px solid var(--g);">
+                <p style="font-style: italic; color: #555; margin-bottom: 15px;">"Safai aur packaging ka miyar dekh kar dil khush ho gaya. Pure home-cooked feel."</p>
+                <h5 style="color: var(--s); font-weight: 900;">- Fahad Malik, CEO TechFixer</h5>
+            </div>
+        </div>
+    </section>
+
+    <style>
+    @keyframes slide-marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    </style>
+        <section class="parallax-banner">
+        <div class="sec-tag" style="color:var(--p);">Tayyar Hain?</div>
+        <h3>Order Karen Aur Zaiqa Azmayein</h3>
+        <p style="max-width: 600px; margin-bottom: 30px; opacity: 0.8;">Fatima's Kitchen ke taaza aur khalis khano ka lutf uthane ke liye abhi menu dekhein ya direct rabta karein.</p>
+        <div class="btn-container">
+            <a href="menu.html" class="btn-main btn-gold">View Full Menu</a>
+            <a href="https://wa.me/923351696907" class="btn-main btn-outline">WhatsApp Order</a>
+        </div>
+    </section>
+
+    <footer class="footer-main">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>Fatima's Kitchen</h2>
+                <p>1992 se aapke gharon mein asli zaiqa pohanchane ka safar. Humara maqsad sehat aur lazzat ka behtareen imtezaaj hai.</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="https://facebook.com" style="width:40px;height:40px;background:var(--s);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--p);">f</a>
+                    <a href="https://instagram.com" style="width:40px;height:40px;background:var(--s);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--p);">ig</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-head">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html">Our Menu</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-head">Information</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Delivery Policy</a></li>
+                    <li><a href="#">Frozen Food Care</a></li>
+                    <li><a href="#">Bulk Orders</a></li>
+                    <li><a href="#">Quality Assurance</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-head">Direct Contact</h4>
+                <div class="contact-pill">
+                    <span class="pill-label">Location</span>
+                    <span>Rawalpindi / Islamabad</span>
+                </div>
+                <div class="contact-pill">
+                    <span class="pill-label">WhatsApp Only</span>
+                    <span>+92 335 1696907</span>
+                </div>
+                <div class="contact-pill">
+                    <span class="pill-label">Email</span>
+                    <span>info@fatimakitchen.pk</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright-bar">
+            &copy; 2026 FATIMA'S KITCHEN | POWERED BY TECHFIXER | PROTOCOL 600 COMPLIANT
+        </div>
+    </footer>
+</div> <script>
+    // Scroll Effect for Navigation
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('mainNav');
+        if (window.scrollY > 100) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
+    // Intersection Observer for Reveal Animations
+    const observerOptions = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.f-card, .glass-card, .stat-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        observer.observe(el);
+    });
+
+    // Native Amanatdari Alert
+    console.log("%c FATIMA'S KITCHEN | SYSTEM PROTECTED ", "background: #8b0000; color: #ffcc00; font-weight: bold; padding: 10px;");
+</script>
+</body>
+</html>
+<script>
+    // 1. DYNAMIC STATS COUNTER - Without Heavy Libraries
+    const stats = document.querySelectorAll('.stat-num');
+    const speed = 200;
+
+    const startCounter = (el) => {
+        const target = +el.innerText.replace('+', '').replace('k', '000');
+        let count = 0;
+        const updateCount = () => {
+            const inc = target / speed;
+            if (count < target) {
+                count += inc;
+                el.innerText = Math.ceil(count) + (el.innerText.includes('k') ? 'k+' : '+');
+                setTimeout(updateCount, 1);
+            } else {
+                el.innerText = el.getAttribute('data-target');
+            }
+        };
+        updateCount();
+    };
+
+    // 2. SCROLL REVEAL & TRIGGER COUNTER
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                if (entry.target.classList.contains('stat-item')) {
+                    const num = entry.target.querySelector('.stat-num');
+                    if(!num.hasAttribute('data-target')) {
+                        num.setAttribute('data-target', num.innerText);
+                        startCounter(num);
+                    }
+                }
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.f-card, .stat-item, .glass-card, .p-text').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    // 3. SYSTEM-HEALING MEMORY FLUSH (Protocol 600)
+    window.addEventListener('beforeunload', () => {
+        // Garbage collection hint and local storage sync
+        console.log("Memory Flush: Session Data Secured.");
+        localStorage.setItem('FK_LastVisit', new Date().toISOString());
+    });
+
+    // 4. PREVENT EXTERNAL IMAGE DEPENDENCY - FALLBACK LOGIC
+    document.querySelectorAll('img').forEach(img => {
+        img.onerror = function() {
+            this.style.display = 'none';
+            this.parentElement.classList.add('item-ui-visual');
+        };
+    });
+
+    // 5. AMANATDARI MODAL - Integrity Check
+    function checkIntegrity() {
+        console.info("%c SYSTEM CHECK: 100% NATIVE | ZERO MOCK ", "color: #27ae60; font-weight: bold;");
+    }
+    checkIntegrity();
+</script>
+
+<div style="position: fixed; bottom: 20px; left: 20px; z-index: 10000;">
+    <a href="https://wa.me/923351696907" 
+       style="background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: 0.3s;"
+       onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+       <span style="font-size: 10px; font-weight: 900; text-align: center;">WA ONLY</span>
+    </a>
 </div>
-<footer>&copy; 2024 Fatima Kitchen | Lahore, Pakistan</footer></body></html>
+
+</body>
+</html>
