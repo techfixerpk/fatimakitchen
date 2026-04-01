@@ -3,24 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Our Menu | Fatima's Kitchen Lahore</title>
+    <title>Menu | Fatima's Kitchen Lahore | 1992 Legacy</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .menu-grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Default Mobile: 1 Column */
-            gap: 20px;
-            width: 100%;
-        }
-        @media (min-width: 600px) {
-            .menu-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (min-width: 1024px) {
-            .menu-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-    </style>
 </head>
-<body>
+<body class="no-lag">
+
+    <div class="system-status">System: Online | Area: Lahore | Protocol: Amanatdari</div>
 
     <nav class="nav">
         <a href="index.html" class="logo-link">
@@ -37,222 +25,336 @@
         <ul class="nav-links" id="nav-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="menu.html" style="color: var(--s);">Menu</a></li>
+            <li><a href="menu.html" style="color: var(--p);">Menu</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <header class="section" style="background: var(--t); text-align: center; margin-top: 70px; padding: 40px 6%;">
-        <div class="badge-lahore">Authentic Lahore Taste</div>
-        <h1 style="color: var(--p); margin-top: 15px;">Our Delicious Menu</h1>
-        <p style="color: rgba(255,255,255,0.7); max-width: 500px; margin: 15px auto;">
-            Ghar jaisa zaiqa, Amanatdari ke sath. Explore our wide range of fresh and frozen items.
+    <header class="section-padding" style="background: linear-gradient(rgba(26,26,26,0.9), rgba(26,26,26,0.9)), url('Kitchen_Image_1.jpg') center/cover; margin-top: 75px; text-align: center; border-bottom: 2px solid var(--s);">
+        <div class="badge-lahore">Premium Homemade Taste</div>
+        <h1 class="gold-text" style="font-size: 3.5rem;">The Master Menu</h1>
+        <p style="color: rgba(255,255,255,0.7); max-width: 700px; margin: 15px auto;">
+            1992 se wahi asli zaiqa. Lahore ke har dastarkhwan ki shaan, hamare khalis masalon ke saath.
         </p>
+        
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 30px;">
+            <a href="#frozen" class="btn btn-s" style="font-size: 0.7rem;">Frozen Items</a>
+            <a href="#fresh" class="btn btn-s" style="font-size: 0.7rem;">Freshly Cooked</a>
+            <a href="#desi" class="btn btn-s" style="font-size: 0.7rem;">Desi Specials</a>
+            <a href="#sweet" class="btn btn-s" style="font-size: 0.7rem;">Desserts</a>
+        </div>
     </header>
 
-    <div style="width: 100%; overflow-x: auto; background: var(--w); border-bottom: 2px solid var(--g); position: sticky; top: 70px; z-index: 900; white-space: nowrap; padding: 15px 5%;">
-        <button onclick="showCat('frozen')" class="btn-p" style="padding: 10px 20px; font-size: 0.8rem; margin-right: 10px;">Frozen Items</button>
-        <button onclick="showCat('fresh')" class="btn-s" style="padding: 10px 20px; font-size: 0.8rem; color: var(--s); border-color: var(--s); margin-right: 10px;">Fresh Deals</button>
-        <button onclick="showCat('desserts')" class="btn-s" style="padding: 10px 20px; font-size: 0.8rem; color: var(--s); border-color: var(--s);">Sweet Dishes</button>
-    </div>
-        <main class="section" style="padding-top: 40px;">
+    <main class="max-width section-padding">
         
-        <div id="frozen" class="category-wrapper">
-            <div class="sec-title-wrap">
-                <h2>Frozen Items <span>Pack & Fry</span></h2>
-                <p style="margin-top: 10px;">Hamare khas frozen items jo aap kabhi bhi fry kar sakte hain.</p>
+        <div id="frozen" class="category-title">
+            <h2 class="gold-text">01. Frozen Delights</h2>
+        </div>
+
+        <div class="menu-section">
+            <div class="card-box">
+                <div class="price-tag">Rs. 850 / Dozen</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_2.jpg" alt="Beef Shami Kabab" loading="lazy">
+                    <div class="item-status-tag">Frozen Ready</div>
+                </div>
+                <h3 style="color: var(--p);">Beef Shami Kabab</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Asli beef aur ghar ke masalon se bane, fry karne ke liye bilkul tayyar.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Order: Shami Kabab" class="btn btn-p shake-hover" style="width: 100%;">Order on WhatsApp</a>
+                </div>
             </div>
 
-            <div class="menu-grid">
-                <div class="card-box">
-                    <span class="pill">Best Seller</span>
-                    <div class="img-wrap">
-                        <img src="paratha.jpg" alt="Plain Paratha" onerror="this.src='https://via.placeholder.com/400x300?text=Plain+Paratha'">
-                    </div>
-                    <h3 style="color: var(--s); font-size: 1.2rem;">Plain Paratha</h3>
-                    <p style="font-size: 0.85rem; margin: 10px 0;">12 Pieces Pack - Crispy & Homemade</p>
-                    <div style="font-weight: 900; font-size: 1.1rem; color: var(--t); margin-bottom: 15px;">Rs. 450</div>
-                    <a href="https://wa.me/923351696907?text=I+want+to+order+Plain+Paratha" class="btn btn-p" style="width: 100%; padding: 12px;">Order Now</a>
+            <div class="card-box">
+                <div class="price-tag">Rs. 750 / Dozen</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_3.jpg" alt="Chicken Spring Rolls" loading="lazy">
+                    <div class="item-status-tag">Top Seller</div>
                 </div>
-
-                <div class="card-box">
-                    <div class="img-wrap">
-                        <img src="shami.jpg" alt="Chicken Shami" onerror="this.src='https://via.placeholder.com/400x300?text=Chicken+Shami'">
-                    </div>
-                    <h3 style="color: var(--s); font-size: 1.2rem;">Chicken Shami Kabab</h3>
-                    <p style="font-size: 0.85rem; margin: 10px 0;">12 Pieces Pack - Pure Chicken & Lentils</p>
-                    <div style="font-weight: 900; font-size: 1.1rem; color: var(--t); margin-bottom: 15px;">Rs. 850</div>
-                    <a href="https://wa.me/923351696907?text=I+want+to+order+Chicken+Shami" class="btn btn-p" style="width: 100%; padding: 12px;">Order Now</a>
-                </div>
-
-                <div class="card-box">
-                    <div class="img-wrap">
-                        <img src="aloo-paratha.jpg" alt="Aloo Paratha" onerror="this.src='https://via.placeholder.com/400x300?text=Aloo+Paratha'">
-                    </div>
-                    <h3 style="color: var(--s); font-size: 1.2rem;">Aloo Wala Paratha</h3>
-                    <p style="font-size: 0.85rem; margin: 10px 0;">6 Pieces Pack - Spiced Potato Filling</p>
-                    <div style="font-weight: 900; font-size: 1.1rem; color: var(--t); margin-bottom: 15px;">Rs. 600</div>
-                    <a href="https://wa.me/923351696907?text=I+want+to+order+Aloo+Paratha" class="btn btn-p" style="width: 100%; padding: 12px;">Order Now</a>
-                </div>
-
-                <div class="card-box">
-                    <div class="img-wrap">
-                        <img src="rolls.jpg" alt="Spring Rolls" onerror="this.src='https://via.placeholder.com/400x300?text=Spring+Rolls'">
-                    </div>
-                    <h3 style="color: var(--s); font-size: 1.2rem;">Vegetable Rolls</h3>
-                    <p style="font-size: 0.85rem; margin: 10px 0;">12 Pieces Pack - Fresh Veggies</p>
-                    <div style="font-weight: 900; font-size: 1.1rem; color: var(--t); margin-bottom: 15px;">Rs. 550</div>
-                    <a href="https://wa.me/923351696907?text=I+want+to+order+Veg+Rolls" class="btn btn-p" style="width: 100%; padding: 12px;">Order Now</a>
+                <h3 style="color: var(--p);">Chicken Spring Rolls</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Crispy crust aur juicy chicken filling. Lahore ka favorite evening snack.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Order: Chicken Rolls" class="btn btn-p shake-hover" style="width: 100%;">Order on WhatsApp</a>
                 </div>
             </div>
         </div>
-                <div id="fresh" class="category-wrapper" style="margin-top: 80px;">
-            <div class="sec-title-wrap">
-                <span class="location-tag">📍 Lahore Special</span>
-                <h2>Freshly Cooked Deals</h2>
-                <p>Daily fresh dishes, prepared on order with Amanatdari.</p>
+                <div class="menu-section">
+            <div class="card-box">
+                <div class="price-tag">Rs. 650 / Dozen</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_4.jpg" alt="Chicken Samosa" loading="lazy">
+                    <div class="item-status-tag">Crispy Filling</div>
+                </div>
+                <h3 style="color: var(--p);">Chicken Samosa</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Hand-folded samosas, bhur-bhura crust aur chatpata chicken filling.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Order: Chicken Samosa" class="btn btn-p shake-hover" style="width: 100%;">Order Now</a>
+                </div>
             </div>
 
-            <div class="menu-grid">
-                <div class="card-box">
-                    <span class="pill">Authentic</span>
-                    <div class="img-wrap">
-                        <img src="haleem.jpg" alt="Chicken Haleem" onerror="this.src='https://via.placeholder.com/400x300?text=Chicken+Haleem'">
-                    </div>
-                    <h3 style="color: var(--s); font-size: 1.2rem;">Special Chicken Haleem</h3>
-                    <p style="font-size: 0.85rem; margin: 10px 0;">Per KG - Slow Cooked for 12 Hours</p>
-                    <div style="font-weight: 900; font-size: 1.1rem; color: var(--t); margin-bottom: 15px;">Rs. 1,800</div>
-                    <a href="https://wa.me/923351696907?text=I+want+to+order+Chicken+Haleem" class="btn btn-p" style="width: 100%; padding: 12px;">Order via WhatsApp</a>
+            <div class="card-box">
+                <div class="price-tag">Rs. 450 / Dozen</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_5.jpg" alt="Aloo Tikki" loading="lazy">
+                    <div class="item-status-tag">Traditional</div>
                 </div>
-
-                <div id="desserts" class="card-box">
-                    <span class="pill" style="background:var(--p); color:var(--s);">Sweet</span>
-                    <div class="img-wrap">
-                        <img src="kheer.jpg" alt="Shahi Kheer" onerror="this.src='https://via.placeholder.com/400x300?text=Shahi+Kheer'">
-                    </div>
-                    <h3 style="color: var(--s); font-size: 1.2rem;">Shahi Kheer</h3>
-                    <p style="font-size: 0.85rem; margin: 10px 0;">Per Bowl - Rich Saffron & Nuts</p>
-                    <div style="font-weight: 900; font-size: 1.1rem; color: var(--t); margin-bottom: 15px;">Rs. 1,200</div>
-                    <a href="https://wa.me/923351696907?text=I+want+to+order+Shahi+Kheer" class="btn btn-p" style="width: 100%; padding: 12px;">Order via WhatsApp</a>
+                <h3 style="color: var(--p);">Aloo Tikki Special</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Lahori style chana dal aur aloo ki tikki, haryali masalon ke saath.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Order: Aloo Tikki" class="btn btn-p shake-hover" style="width: 100%;">Order Now</a>
                 </div>
+            </div>
+        </div>
 
-                <div class="card-box">
-                    <div class="img-wrap">
-                        <img src="halwa.jpg" alt="Suji Halwa" onerror="this.src='https://via.placeholder.com/400x300?text=Suji+Halwa'">
-                    </div>
-                    <h3 style="color: var(--s); font-size: 1.2rem;">Desi Ghee Suji Halwa</h3>
-                    <p style="font-size: 0.85rem; margin: 10px 0;">Per Bowl - Pure Desi Ghee</p>
-                    <div style="font-weight: 900; font-size: 1.1rem; color: var(--t); margin-bottom: 15px;">Rs. 950</div>
-                    <a href="https://wa.me/923351696907?text=I+want+to+order+Suji+Halwa" class="btn btn-p" style="width: 100%; padding: 12px;">Order via WhatsApp</a>
+        <div id="fresh" class="category-title">
+            <h2 class="gold-text">02. Freshly Cooked</h2>
+        </div>
+
+        <div class="menu-section">
+            <div class="card-box">
+                <div class="price-tag">Rs. 450 / Plate</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_6.jpg" alt="Special Biryani" loading="lazy">
+                    <div class="item-status-tag">Steam Fresh</div>
+                </div>
+                <h3 style="color: var(--p);">Shahi Chicken Biryani</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Long grain Basmati chawal aur zafrani masala. Lahore ka asli zaiqa.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Order: Chicken Biryani" class="btn btn-p shake-hover" style="width: 100%;">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card-box">
+                <div class="price-tag">Rs. 550 / Bowl</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_7.jpg" alt="Mutton Haleem" loading="lazy">
+                    <div class="item-status-tag">7-Hour Slow Cook</div>
+                </div>
+                <h3 style="color: var(--p);">Degi Mutton Haleem</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Ghotay wali haleem, asli mutton aur khalis deshi ghee ka tarka.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Order: Mutton Haleem" class="btn btn-p shake-hover" style="width: 100%;">Order Now</a>
+                </div>
+            </div>
+        </div>
+                <div id="desi" class="category-title">
+            <h2 class="gold-text">03. Desi Specials</h2>
+        </div>
+
+        <div class="menu-section">
+            <div class="card-box">
+                <div class="price-tag">Rs. 500 / Plate</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_8.jpg" alt="Beef Degi Pulao" loading="lazy">
+                    <div class="item-status-tag">Legacy Taste</div>
+                </div>
+                <h3 style="color: var(--p);">Beef Degi Pulao</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Yakhni mein paka hua asli degi pulao, naram beef aur khushbu-dar masale.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Assalam-o-Alaikum Fatima's Kitchen, I want to order Beef Degi Pulao." class="btn btn-p shake-hover" style="width: 100%;">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card-box">
+                <div class="price-tag">Rs. 1850 / KG</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_9.jpg" alt="Chicken Karahi" loading="lazy">
+                    <div class="item-status-tag">Cooked in Desi Ghee</div>
+                </div>
+                <h3 style="color: var(--p);">Desi Ghee Chicken Karahi</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Kali mirch aur desi ghee ka tarka. Fresh chicken, order par tayyar.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Assalam-o-Alaikum, I want to order 1KG Chicken Karahi." class="btn btn-p shake-hover" style="width: 100%;">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card-box">
+                <div class="price-tag">Rs. 350 / Serving</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_10.jpg" alt="Kofta Chana" loading="lazy">
+                    <div class="item-status-tag">Morning Special</div>
+                </div>
+                <h3 style="color: var(--p);">Lahori Kofta Chana</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Chicken koftay aur makhni chanay. Nashtay aur lunch ke liye behtareen.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Order: Kofta Chana Plate" class="btn btn-p shake-hover" style="width: 100%;">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card-box">
+                <div class="price-tag">Rs. 600 / Deal</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_11.jpg" alt="Saag Makki Roti" loading="lazy">
+                    <div class="item-status-tag">Seasonal Hit</div>
+                </div>
+                <h3 style="color: var(--p);">Sarson Saag Deal</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Khalis sarson ka saag (Desi Ghee tarka) aur 2 Makki ki rotian.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Order: Saag and Makki Roti Deal" class="btn btn-p shake-hover" style="width: 100%;">Order Now</a>
+                </div>
+            </div>
+        </div>
+                <div id="sweet" class="category-title">
+            <h2 class="gold-text">04. Shahi Desserts</h2>
+        </div>
+
+        <div class="menu-section">
+            <div class="card-box">
+                <div class="price-tag">Rs. 450 / Thali</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_12.jpg" alt="Shahi Kheer" loading="lazy">
+                    <div class="item-status-tag">Slow Cooked</div>
+                </div>
+                <h3 style="color: var(--p);">Peshawari Shahi Kheer</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Mitti ki thali mein jamai hui, khoya aur badam se bharpoor kheer.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Order: Shahi Kheer" class="btn btn-p shake-hover" style="width: 100%;">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card-box">
+                <div class="price-tag">Rs. 350 / Plate</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_13.jpg" alt="Zarda" loading="lazy">
+                    <div class="item-status-tag">Colorful Legacy</div>
+                </div>
+                <h3 style="color: var(--p);">Special Shahi Zarda</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Rang-barange chawal, ashrafian aur cham-cham ke saath shadiyon wala zaiqa.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Order: Special Zarda" class="btn btn-p shake-hover" style="width: 100%;">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card-box">
+                <div class="price-tag">Rs. 1200 / KG</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_14.jpg" alt="Gajar Halwa" loading="lazy">
+                    <div class="item-status-tag">Khalis Desi Ghee</div>
+                </div>
+                <h3 style="color: var(--p);">Desi Ghee Gajar Halwa</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Sardion ki saughat, khalis doodh aur gajar se bana hua homemade halwa.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Order: Gajar Halwa 1KG" class="btn btn-p shake-hover" style="width: 100%;">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card-box">
+                <div class="price-tag">Rs. 150 / Piece</div>
+                <div class="img-frame">
+                    <img src="Kitchen_Image_15.jpg" alt="Ras Malai" loading="lazy">
+                    <div class="item-status-tag">Soft & Creamy</div>
+                </div>
+                <h3 style="color: var(--p);">Homemade Ras Malai</h3>
+                <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Naram aur malai dar ras malai, thanday doodh aur pista topping ke saath.</p>
+                <div class="item-meta">
+                    <a href="https://wa.me/923351696907?text=Order: Ras Malai (Specify Qty)" class="btn btn-p shake-hover" style="width: 100%;">Order Now</a>
                 </div>
             </div>
         </div>
     </main>
 
-    <div class="section" style="background: var(--p); color: var(--s); text-align: center; padding: 40px 10%;">
-        <h3 style="font-weight: 900; text-transform: uppercase;">100% Quality Assurance</h3>
-        <p style="font-size: 0.9rem; margin-top: 10px;">We use only premium ingredients for all Lahore deliveries. No compromises on health.</p>
-    </div>
-            <footer class="footer">
-        <div class="footer-content">
+    <a href="tel:+923351696907" class="btn btn-s glow-btn" style="position: fixed; bottom: 90px; right: 25px; border-radius: 50%; width: 60px; height: 60px; z-index: 9999; padding: 0;">
+        📞
+    </a>
+
+    <footer class="footer">
+        <div class="footer-grid max-width">
             <div class="footer-brand">
-                <img src="logo.jpg" alt="Fatima's Kitchen" class="logo-img" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 15px;">
-                <h2>Fatima's Kitchen</h2>
-                <p>Lahore ka asli aur khalis ghar ka zaiqa. Amanatdari aur safai hamari pehchan hai.</p>
+                <img src="logo.jpg" alt="Fatima's Kitchen">
+                <h2 class="gold-text">Fatima's Kitchen</h2>
+                <p>Lahore ki purani riwayat aur ghar ka khalis zaiqa. Hum 1992 se aap ki khidmat mein hazir hain.</p>
             </div>
-
-            <div class="footer-info">
-                <h4 style="color: var(--p); font-size: 0.8rem; letter-spacing: 2px;">CONTACT US</h4>
-                <div class="info-item"><b>LOCATION:</b> Lahore, Pakistan</div>
-                <div class="info-item"><b>WHATSAPP:</b> +92 335 1696907</div>
-                <div class="info-item"><b>EMAIL:</b> fatimaskitchenpk92@gmail.com</div>
             </div>
-
-            <div class="footer-info">
-                <h4 style="color: var(--p); font-size: 0.8rem; letter-spacing: 2px;">SOCIAL MEDIA</h4>
-                <div class="social-wrap">
-                    <a href="https://www.facebook.com/share/1FLGJsGHZ7/" class="social-link" title="Facebook">FB</a>
-                    <a href="https://www.instagram.com/fatimaaskitchen" class="social-link" title="Instagram">IG</a>
-                    <a href="https://www.tiktok.com/@fatimas_kitchen_" class="social-link" title="TikTok">TK</a>
-                    <a href="https://youtube.com/@fatimaskitchen-r3o" class="social-link" title="YouTube">YT</a>
-                    <a href="https://x.com/fatimakitchenpk" class="social-link" title="X (Twitter)">X</a>
-                    <a href="https://pin.it/3wBZzLXf7" class="social-link" title="Pinterest">PN</a>
-                    <a href="https://www.threads.com/@fatimaaskitchen" class="social-link" title="Threads">TR</a>
-                    <a href="https://wa.me/923351696907" class="social-link" style="background: #25d366; color: white;" title="WhatsApp">WA</a>
+    </footer>
+        <footer class="footer" style="padding-top: 0;">
+        <div class="footer-grid max-width">
+            <div class="footer-links">
+                <h4 class="glitch-text">Connect with Legacy</h4>
+                <div class="social-grid">
+                    <a href="https://www.facebook.com/share/1FLGJsGHZ7/" class="social-btn" title="Facebook">FB</a>
+                    <a href="https://www.instagram.com/fatimaaskitchen" class="social-btn" title="Instagram">IG</a>
+                    <a href="https://www.tiktok.com/@fatimas_kitchen_" class="social-btn" title="TikTok">TK</a>
+                    <a href="https://youtube.com/@fatimaskitchen-r3o" class="social-btn" title="YouTube">YT</a>
+                    <a href="https://x.com/fatimakitchenpk" class="social-btn" title="Twitter">X</a>
+                    <a href="https://pin.it/3wBZzLXf7" class="social-btn" title="Pinterest">PN</a>
+                    <a href="https://www.threads.com/@fatimaaskitchen" class="social-btn" title="Threads">TR</a>
+                    <a href="https://wa.me/923351696907" class="social-btn" style="background: #25d366; color: #fff; border: none;" title="WhatsApp">WA</a>
                 </div>
             </div>
+
+            <div class="footer-links">
+                <h4>Amanatdari Details</h4>
+                <ul>
+                    <li><a href="tel:+923351696907">📞 +92 335 1696907</a></li>
+                    <li><a href="mailto:fatimaskitchenpk92@gmail.com">📧 fatimaskitchenpk92@gmail.com</a></li>
+                    <li><a href="#">📍 Lahore, Punjab, Pakistan</a></li>
+                </ul>
+            </div>
         </div>
 
-        <div class="copy-bar">
-            &copy; 2026 FATIMA'S KITCHEN | LAHORE | PROTOCOL 600
+        <div class="copy-bar" style="text-align: center; padding: 20px; border-top: 1px solid var(--glass-border); font-size: 0.7rem; color: var(--p); letter-spacing: 2px;">
+            &copy; 2026 FATIMA'S KITCHEN | POWERED BY TECHFIXER | 100% NATIVE LOGIC
         </div>
-            </footer>
-                <button id="scrollTop" style="position: fixed; bottom: 90px; right: 20px; width: 45px; height: 45px; background: var(--s); color: var(--p); border: 2px solid var(--w); border-radius: 50%; z-index: 999; display: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3); font-weight: 900; cursor: pointer; transition: 0.3s;">
-        ↑
-    </button>
-
-    <div id="order-status-bar" style="position: fixed; bottom: 0; left: 0; width: 100%; background: var(--s); color: var(--p); padding: 8px; text-align: center; font-size: 10px; z-index: 10001; letter-spacing: 1px; font-weight: 800; border-top: 1px solid var(--p);">
-        DELIVERING FRESH IN LAHORE | WHATSAPP ONLY: +92 335 1696907
-    </div>
+    </footer>
 
     <script>
-        // Scroll to Top Logic
-        const topBtn = document.getElementById('scrollTop');
-        window.onscroll = function() {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                topBtn.style.display = "block";
-            } else {
-                topBtn.style.display = "none";
-            }
-        };
+        // 1. Mobile Menu Engine
+        const menuBtn = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
 
-        topBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-
-        // Anti-Lag Performance Guard
-        window.addEventListener('load', () => {
-            console.log("Fatima's Kitchen System: Mobile-First Grid Locked.");
-            // Hide status bar after 8 seconds to save screen space
-            setTimeout(() => {
-                const bar = document.getElementById('order-status-bar');
-                bar.style.transform = 'translateY(100%)';
-                bar.style.transition = '0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-            }, 8000);
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            navList.classList.toggle('active');
+            // Sound Feedback Simulation
+            console.log("Menu Toggle: Sound Triggered");
         });
 
-        // Social Link Integrity Check
-        document.querySelectorAll('.social-link').forEach(link => {
-            link.addEventListener('click', () => {
-                console.info("Redirecting to Official Social Channel...");
+        // 2. Memory-Safe Image Loading (For 4GB RAM)
+        window.addEventListener('load', () => {
+            const allImages = document.querySelectorAll('img');
+            allImages.forEach(img => {
+                img.style.opacity = '1';
+                img.style.transition = 'opacity 0.5s ease-in';
             });
+            console.log("Amanatdari Protocol: Menu Loaded Successfully.");
+        });
+
+        // 3. Auto-Close Menu on Click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                navList.classList.remove('active');
+            });
+        });
+
+        // 4. Scroll Reveal Logic for Items
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('no-lag');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card-box').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)';
+            observer.observe(card);
         });
     </script>
 
     <style>
-        /* Mobile Screen Padding Fix */
-        @media (max-width: 480px) {
-            .section { padding: 40px 5%; }
-            .card-box { margin-bottom: 10px; border-radius: 15px; }
-            .menu-grid { gap: 15px; }
-            h1 { font-size: 1.8rem !important; }
-            .footer-content { text-align: center; }
-            .social-wrap { justify-content: center; }
-            .info-item { justify-content: center; text-align: center; }
+        /* Part 5 UI Fixes */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
         }
-
-        /* Prevent Horizontal Shake */
-        html, body {
-            max-width: 100vw;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        /* High-Density Card Styling */
-        .card-box {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+        @media (max-width: 400px) {
+            .social-grid { grid-template-columns: repeat(3, 1fr); }
         }
     </style>
 
