@@ -1,62 +1,208 @@
-<!DOCTYPE html><html><head><title>Menu - Fatima Kitchen</title><link rel="stylesheet" href="style.css"></head><body>
-
-<nav>
-    <div class="logo">Fatima Kitchen</div>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-    </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Menu | Fatima's Kitchen</title>
+<style>
+:root{--p:#ffcc00;--s:#8b0000;--t:#3d2b1f;--w:#ffffff;--g:#f4f4f4;--dark:#1a1a1a;--a:0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+body{background:var(--g);color:var(--t);overflow-x:hidden;}
+.nav{width:100%;height:80px;background:var(--w);display:flex;justify-content:space-between;align-items:center;padding:0 5%;position:fixed;top:0;z-index:2000;box-shadow:0 2px 20px rgba(0,0,0,0.1);}
+.logo{display:flex;align-items:center;text-decoration:none;}
+.logo-circle{width:50px;height:50px;background:var(--p);border-radius:50%;border:2px solid var(--s);display:flex;justify-content:center;align-items:center;font-weight:900;color:var(--s);font-size:10px;text-align:center;line-height:1;}
+.logo-text{margin-left:12px;font-size:20px;font-weight:900;color:var(--s);text-transform:uppercase;letter-spacing:1px;}
+.nav-links{display:flex;gap:25px;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--t);font-weight:700;font-size:14px;transition:0.3s;}
+.nav-links a:hover{color:var(--s);}
+.menu-hero{width:100%;height:40vh;background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),var(--t);margin-top:80px;display:flex;flex-direction:column;justify-content:center;align-items:center;color:var(--w);text-align:center;position:relative;}
+.menu-hero h1{font-size:3.5rem;text-transform:uppercase;letter-spacing:8px;text-shadow:4px 4px 0 var(--s);}
+.menu-hero p{color:var(--p);font-weight:300;letter-spacing:3px;margin-top:10px;}
+.category-bar{width:100%;background:var(--w);padding:20px 0;position:sticky;top:80px;z-index:1500;box-shadow:0 5px 15px rgba(0,0,0,0.05);display:flex;justify-content:center;gap:15px;overflow-x:auto;}
+.cat-btn{padding:12px 25px;border:2px solid var(--s);background:transparent;color:var(--s);font-weight:800;border-radius:50px;cursor:pointer;transition:var(--a);white-space:nowrap;text-transform:uppercase;font-size:12px;letter-spacing:1px;}
+.cat-btn.active, .cat-btn:hover{background:var(--s);color:var(--w);transform:scale(1.1);box-shadow:0 5px 15px rgba(139,0,0,0.3);}
+.menu-container{max-width:1400px;margin:50px auto;padding:0 5%;}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));gap:30px;display:none;}
+.menu-grid.active{display:grid;animation:fadeIn 0.6s ease-in-out;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.item-card{background:var(--w);border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.05);transition:var(--a);border:1px solid rgba(0,0,0,0.02);position:relative;}
+.item-card:hover{transform:translateY(-15px);box-shadow:0 20px 40px rgba(0,0,0,0.15);}
+.item-ui-visual{width:100%;height:200px;background:linear-gradient(45deg, var(--p), #ffd700);position:relative;display:flex;justify-content:center;align-items:center;overflow:hidden;}
+.item-ui-visual::before{content:'FK';font-size:80px;font-weight:900;color:rgba(255,255,255,0.2);letter-spacing:10px;}
+.item-ui-visual::after{content:'';position:absolute;width:150%;height:150%;background:repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px);animation:move 10s linear infinite;}
+@keyframes move{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.price-tag{position:absolute;top:15px;right:15px;background:var(--s);color:var(--w);padding:8px 15px;border-radius:50px;font-weight:900;font-size:14px;box-shadow:0 5px 10px rgba(0,0,0,0.2);z-index:10;}
+.item-info{padding:25px;}
+.item-info h3{font-size:1.4rem;color:var(--s);margin-bottom:10px;text-transform:capitalize;}
+.item-info p{font-size:0.9rem;color:#666;line-height:1.5;margin-bottom:20px;height:45px;overflow:hidden;}
+.order-row{display:flex;justify-content:space-between;align-items:center;}
+.btn-atc{padding:10px 20px;background:var(--t);color:var(--w);border-radius:10px;text-decoration:none;font-size:12px;font-weight:700;transition:0.3s;text-transform:uppercase;}
+.btn-atc:hover{background:var(--p);color:var(--s);}
+</style>
+</head>
+<body>
+<nav class="nav">
+<a href="index.html" class="logo">
+<div class="logo-circle">FATIMA'S<br>KITCHEN</div>
+<span class="logo-text">Fatima's Kitchen</span>
+</a>
+<ul class="nav-links">
+<li><a href="index.html">HOME</a></li>
+<li><a href="about.html">ABOUT</a></li>
+<li><a href="menu.html" style="color:var(--s);">MENU</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+</ul>
+<a href="https://wa.me/923180313851" class="btn-atc" style="background:var(--p);color:var(--s);padding:12px 25px;">ORDER NOW</a>
 </nav>
-<header class="hero"><h1>Hamara Menu</h1><p>Ghar ka Khana, Shandaar Zaiqa</p></header>
-<a href="https://wa.me/03180313851" class="float-wa" target="_blank">WA</a>
+<header class="menu-hero">
+<h1>Zaiqon Ki Duniya</h1>
+<p>CHOOSE FROM OUR EXCLUSIVE 50+ ITEMS</p>
+</header>
+<div class="category-bar">
+<button class="cat-btn active" onclick="showCat('frozen')">Frozen Favorites</button>
+<button class="cat-btn" onclick="showCat('desi')">Fresh Desi Deals</button>
+<button class="cat-btn" onclick="showCat('fast')">Fast Food Hub</button>
+<button class="cat-btn" onclick="showCat('bbq')">BBQ & Platters</button>
+<button class="cat-btn" onclick="showCat('sweet')">Sweet Cravings</button>
+</div>
+<main class="menu-container">
+<div id="frozen" class="menu-grid active">
+<div class="item-card"><div class="price-tag">PKR 450</div><div class="item-ui-visual"></div><div class="item-info"><h3>Plain Paratha (Dozen)</h3><p>Crispy, flaky, and golden brown. Perfect for breakfast.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">12 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 650</div><div class="item-ui-visual"></div><div class="item-info"><h3>Aloo Paratha</h3><p>Spiced mashed potatoes stuffed in soft dough layers.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">6 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 850</div><div class="item-ui-visual"></div><div class="item-info"><h3>Chicken Shami Kabab</h3><p>Traditional recipe with pure chicken and lentils.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">12 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 950</div><div class="item-ui-visual"></div><div class="item-info"><h3>Beef Shami Kabab</h3><p>Rich meaty taste with authentic spices.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">12 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1200</div><div class="item-ui-visual"></div><div class="item-info"><h3>Chicken Nuggets</h3><p>Home-made crispy nuggets with no preservatives.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">20 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 700</div><div class="item-ui-visual"></div><div class="item-info"><h3>Vegetable Samosa</h3><p>Classic crispy samosa filled with spiced veggies.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">12 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 900</div><div class="item-ui-visual"></div><div class="item-info"><h3>Chicken Samosa</h3><p>Hand-folded samosas with premium chicken filling.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">12 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1100</div><div class="item-ui-visual"></div><div class="item-info"><h3>Chicken Spring Rolls</h3><p>Thin crispy rolls with chicken and julienne veggies.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">12 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1500</div><div class="item-ui-visual"></div><div class="item-info"><h3>Chicken Kofta</h3><p>Pre-cooked and frozen, ready for your curry.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">12 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1300</div><div class="item-ui-visual"></div><div class="item-info"><h3>Chicken Cutlets</h3><p>Potato and chicken blend with a crispy coating.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">10 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+</div>
+<div id="desi" class="menu-grid">
+<div class="item-card"><div class="price-tag">PKR 1800</div><div class="item-ui-visual"></div><div class="item-info"><h3>Chicken Haleem</h3><p>Slow-cooked for 12 hours with 7 types of grains.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Full KG</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 2200</div><div class="item-ui-visual"></div><div class="item-info"><h3>Desi Chicken Karahi</h3><p>Authentic village taste with organic butter.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Half KG</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1600</div><div class="item-ui-visual"></div><div class="item-info"><h3>Beef Nehari</h3><p>Served with ginger, lemon, and hot naan.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Full KG</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 800</div><div class="item-ui-visual"></div><div class="item-info"><h3>Makki Roti & Saag</h3><p>Winter special combo with desi ghee.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Combo</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1200</div><div class="item-ui-visual"></div><div class="item-info"><h3>Mutton Pulao</h3><p>Fragrant Basmati rice with tender mutton shanks.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Single Plate</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 900</div><div class="item-ui-visual"></div><div class="item-info"><h3>Chicken Biryani</h3><p>Karachi style spicy biryani with raita.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Full KG</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1400</div><div class="item-ui-visual"></div><div class="item-info"><h3>Palak Paneer</h3><p>Creamy spinach with fresh home-made cheese cubes.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Serving</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1100</div><div class="item-ui-visual"></div><div class="item-info"><h3>Daal Mash Fry</h3><p>Butter fried lentils with green chili topping.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Serving</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1500</div><div class="item-ui-visual"></div><div class="item-info"><h3>Mix Vegetable</h3><p>Seasonal veggies cooked in desi spices.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Serving</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 2500</div><div class="item-ui-visual"></div><div class="item-info"><h3>Mutton Kunna</h3><p>Traditional Chinioti style mutton curry.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Half KG</span><a href="#" class="btn-atc">Add</a></div></div></div>
+</div>
+<div id="fast" class="menu-grid">
+<div class="item-card"><div class="price-tag">PKR 450</div><div class="item-ui-visual"></div><div class="item-info"><h3>Zinger Burger</h3><p>Extra crispy thigh fillet with secret mayo sauce.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Standard</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 350</div><div class="item-ui-visual"></div><div class="item-info"><h3>Chicken Shawarma</h3><p>Authentic wrap with pickled veggies and garlic sauce.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Large</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 550</div><div class="item-ui-visual"></div><div class="item-info"><h3>Grilled Chicken Burger</h3><p>Flame-grilled patty with fresh lettuce and cheese.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Deluxe</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1200</div><div class="item-ui-visual"></div><div class="item-info"><h3>Pizza Fries</h3><p>Loaded fries with chunks of chicken, olives, and cheese.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Sharing</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 850</div><div class="item-ui-visual"></div><div class="item-info"><h3>Club Sandwich</h3><p>3-layered sandwich with egg, chicken, and fresh veg.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">4 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 400</div><div class="item-ui-visual"></div><div class="item-info"><h3>Chicken Nuggets (Fried)</h3><p>Golden fried nuggets served with honey mustard.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">10 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 650</div><div class="item-ui-visual"></div><div class="item-info"><h3>Loaded Nachos</h3><p>Crispy tortillas with salsa, cheese, and chicken.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Platter</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 300</div><div class="item-ui-visual"></div><div class="item-info"><h3>Crispy Wings</h3><p>Spicy breaded wings with a satisfying crunch.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">6 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 950</div><div class="item-ui-visual"></div><div class="item-info"><h3>Chicken Pasta</h3><p>White sauce penne pasta with grilled chicken.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Regular</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1100</div><div class="item-ui-visual"></div><div class="item-info"><h3>Steak Fries</h3><p>Thick cut fries topped with steak strips and gravy.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Large</span><a href="#" class="btn-atc">Add</a></div></div></div>
+</div>
+<div id="bbq" class="menu-grid">
+<div class="item-card"><div class="price-tag">PKR 1400</div><div class="item-ui-visual"></div><div class="item-info"><h3>Chicken Tikka</h3><p>Quarter chicken marinated in traditional red spices.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Chest/Leg</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1600</div><div class="item-ui-visual"></div><div class="item-info"><h3>Seekh Kabab (Chicken)</h3><p>Charcoal grilled minced chicken skewers.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">4 Skewers</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1800</div><div class="item-ui-visual"></div><div class="item-info"><h3>Malai Boti</h3><p>Creamy, melt-in-mouth boneless chicken chunks.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">12 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 2200</div><div class="item-ui-visual"></div><div class="item-info"><h3>Behari Boti</h3><p>Tender beef strips with a smoky mustard flavor.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Plate</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 3500</div><div class="item-ui-visual"></div><div class="item-info"><h3>Mixed BBQ Platter</h3><p>Tikka, Malai Boti, Seekh Kabab, and Fish.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Family</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1900</div><div class="item-ui-visual"></div><div class="item-info"><h3>Grilled Fish</h3><p>Seasonal fish marinated in lahori spices.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Half KG</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1500</div><div class="item-ui-visual"></div><div class="item-info"><h3>Reshmi Kabab</h3><p>Soft and silky chicken kababs with mild spices.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">4 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1700</div><div class="item-ui-visual"></div><div class="item-info"><h3>Afghani Boti</h3><p>Traditional salt-based BBQ with juicy meat.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">12 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 2500</div><div class="item-ui-visual"></div><div class="item-info"><h3>Mutton Chops</h3><p>Prime mutton chops grilled to perfection.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">6 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1300</div><div class="item-ui-visual"></div><div class="item-info"><h3>Chicken Gola Kabab</h3><p>Round, spicy, and extremely juicy kababs.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">8 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+    </div>
+    <div id="sweet" class="menu-grid">
+<div class="item-card"><div class="price-tag">PKR 1200</div><div class="item-ui-visual"></div><div class="item-info"><h3>Shahi Kheer</h3><p>Slow-cooked rice pudding with saffron and pistachios.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">1 KG</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 800</div><div class="item-ui-visual"></div><div class="item-info"><h3>Gulab Jamun</h3><p>Soft, syrup-soaked balls made from fresh khoya.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">12 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1500</div><div class="item-ui-visual"></div><div class="item-info"><h3>Gajar Ka Halwa</h3><p>Winter special made with red carrots and pure desi ghee.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">1 KG</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 600</div><div class="item-ui-visual"></div><div class="item-info"><h3>Ras Malai</h3><p>Chilled cottage cheese discs in thickened sweet milk.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">6 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1100</div><div class="item-ui-visual"></div><div class="item-info"><h3>Zarda (Sweet Rice)</h3><p>Fragrant yellow rice with dry fruits and tutty-fruity.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Full KG</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 900</div><div class="item-ui-visual"></div><div class="item-info"><h3>Soan Papdi</h3><p>Flaky, crisp texture that melts in your mouth.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">500g</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1800</div><div class="item-ui-visual"></div><div class="item-info"><h3>Assorted Mithai</h3><p>A mix of our best barfis, ladoos, and halwas.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">1 KG Box</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 500</div><div class="item-ui-visual"></div><div class="item-info"><h3>Fruit Trifle</h3><p>Layers of custard, cake, jelly, and fresh fruits.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Serving</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 1400</div><div class="item-ui-visual"></div><div class="item-info"><h3>Lab-e-Shireen</h3><p>Traditional creamy dessert with colored vermicelli.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">Large Bowl</span><a href="#" class="btn-atc">Add</a></div></div></div>
+<div class="item-card"><div class="price-tag">PKR 750</div><div class="item-ui-visual"></div><div class="item-info"><h3>Besan Ladoo</h3><p>Made with roasted gram flour and crunchy nuts.</p><div class="order-row"><span style="font-weight:800;color:var(--s);">12 Pcs</span><a href="#" class="btn-atc">Add</a></div></div></div>
+</div>
 
-<div class="container">
-    <div class="grid">
-        <div class="card">
-            <img src="Kitchen_Image_1.jpg">
-            <div class="card-body">
-                <h3>Special Shami Kabab</h3>
-                <p class="price-tag">Rs. 550</p>
-                <a href="https://wa.me/03180313851?text=I want to order Special Shami Kabab" class="btn-ws">Order via WhatsApp</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="Kitchen_Image_2.jpg">
-            <div class="card-body">
-                <h3>Chicken Biryani</h3>
-                <p class="price-tag">Rs. 320</p>
-                <a href="https://wa.me/03180313851?text=I want to order Chicken Biryani" class="btn-ws">Order via WhatsApp</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="Kitchen_Image_3.jpg">
-            <div class="card-body">
-                <h3>Chicken Rolls</h3>
-                <p class="price-tag">Rs. 480</p>
-                <a href="https://wa.me/03180313851?text=I want to order Chicken Rolls" class="btn-ws">Order via WhatsApp</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="Kitchen_Image_4.jpg">
-            <div class="card-body">
-                <h3>Beef Haleem</h3>
-                <p class="price-tag">Rs. 250</p>
-                <a href="https://wa.me/03180313851?text=I want to order Beef Haleem" class="btn-ws">Order via WhatsApp</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="Kitchen_Image_5.jpg">
-            <div class="card-body">
-                <h3>Crispy Samosa</h3>
-                <p class="price-tag">Rs. 350</p>
-                <a href="https://wa.me/03180313851?text=I want to order Crispy Samosa" class="btn-ws">Order via WhatsApp</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="Kitchen_Image_6.jpg">
-            <div class="card-body">
-                <h3>Chicken Karahi</h3>
-                <p class="price-tag">Rs. 850</p>
-                <a href="https://wa.me/03180313851?text=I want to order Chicken Karahi" class="btn-ws">Order via WhatsApp</a>
-            </div>
-        </div></div></div><footer>&copy; 2024 {brand}</footer></body></html>
+<div style="background:var(--s);padding:60px;border-radius:40px;margin:80px 0;display:flex;justify-content:space-between;align-items:center;color:var(--w);box-shadow:0 30px 60px rgba(139,0,0,0.2);position:relative;overflow:hidden;">
+<div style="position:relative;z-index:1;">
+<h2 style="font-size:2.5rem;margin-bottom:15px;text-transform:uppercase;font-weight:900;">Bigger Events?</h2>
+<p style="font-size:1.1rem;opacity:0.9;max-width:500px;margin-bottom:30px;">Hum catering orders bhi letay hain. Shadi ho ya corporate event, Fatima's Kitchen ka zaiqa har jaga chah jaye ga.</p>
+<a href="contact.html" class="btn-atc" style="background:var(--p);color:var(--s);font-weight:900;">Get a Quote</a>
+</div>
+<div style="font-size:120px;opacity:0.1;position:absolute;right:-20px;bottom:-20px;font-weight:900;">DEALS</div>
+</div>
+                                                                                                                                                                                                                                                                                                                                  </main>
+   <footer style="background:var(--t);padding:100px 5% 50px;color:var(--w);margin-top:100px;border-top:10px solid var(--s);position:relative;overflow:hidden;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:60px;max-width:1400px;margin:0 auto;position:relative;z-index:2;">
+<div>
+<div class="logo-circle" style="width:70px;height:70px;font-size:14px;margin-bottom:30px;">FATIMA'S<br>KITCHEN</div>
+<p style="opacity:0.7;line-height:2;font-size:0.95rem;">Fatima's Kitchen 1992 se asli aur khalis gharelu zaiqon ka markaz hai. Humara har item Amanatdari aur safai ke aala miyar par pura utarta hai.</p>
+</div>
+<div>
+<h4 style="color:var(--p);font-size:1.5rem;margin-bottom:30px;text-transform:uppercase;letter-spacing:2px;">Contact Details</h4>
+<p style="margin-bottom:15px;display:flex;align-items:center;gap:10px;opacity:0.8;"><i>📍</i> Rawalpindi / Islamabad, Pakistan</p>
+<p style="margin-bottom:15px;display:flex;align-items:center;gap:10px;opacity:0.8;"><i>📞</i> 0318-0313851</p>
+<p style="margin-bottom:15px;display:flex;align-items:center;gap:10px;opacity:0.8;"><i>💬</i> WhatsApp: +92 335 1696907</p>
+</div>
+<div>
+<h4 style="color:var(--p);font-size:1.5rem;margin-bottom:30px;text-transform:uppercase;letter-spacing:2px;">Social Handles</h4>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;">
+<a href="https://www.facebook.com/share/1FLGJsGHZ7/" style="color:var(--w);text-decoration:none;font-size:0.9rem;opacity:0.6;">Facebook</a>
+<a href="https://www.instagram.com/fatimaaskitchen" style="color:var(--w);text-decoration:none;font-size:0.9rem;opacity:0.6;">Instagram</a>
+<a href="https://www.tiktok.com/@fatimas_kitchen_" style="color:var(--w);text-decoration:none;font-size:0.9rem;opacity:0.6;">TikTok</a>
+<a href="https://youtube.com/@fatimaskitchen-r3o" style="color:var(--w);text-decoration:none;font-size:0.9rem;opacity:0.6;">YouTube</a>
+<a href="https://x.com/fatimakitchenpk" style="color:var(--w);text-decoration:none;font-size:0.9rem;opacity:0.6;">Twitter (X)</a>
+<a href="https://pin.it/3wBZzLXf7" style="color:var(--w);text-decoration:none;font-size:0.9rem;opacity:0.6;">Pinterest</a>
+</div>
+</div>
+</div>
+<div style="text-align:center;margin-top:80px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.05);font-size:0.8rem;letter-spacing:3px;opacity:0.4;">
+&copy; 2026 FATIMA'S KITCHEN | DESIGNED BY TECHFIXER | NO EXTERNAL ASSETS USED
+</div>
+</footer>
+
+<script>
+function showCat(catId) {
+    const grids = document.querySelectorAll('.menu-grid');
+    const btns = document.querySelectorAll('.cat-btn');
+    
+    grids.forEach(grid => {
+        grid.classList.remove('active');
+        grid.style.display = 'none';
+    });
+    
+    btns.forEach(btn => btn.classList.remove('active'));
+    
+    const activeGrid = document.getElementById(catId);
+    activeGrid.style.display = 'grid';
+    setTimeout(() => activeGrid.classList.add('active'), 10);
+    
+    event.currentTarget.classList.add('active');
+    
+    window.scrollTo({
+        top: document.querySelector('.category-bar').offsetTop - 100,
+        behavior: 'smooth'
+    });
+}
+
+// Simple Add to Cart Simulation
+document.querySelectorAll('.btn-atc').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        if(btn.innerText === "ADD") {
+            e.preventDefault();
+            btn.innerText = "ADDED ✅";
+            btn.style.background = "#27ae60";
+            setTimeout(() => {
+                btn.innerText = "ADD";
+                btn.style.background = "var(--t)";
+            }, 2000);
+        }
+    });
+});
+</script>
+</body>
+</html>
